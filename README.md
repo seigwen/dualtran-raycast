@@ -34,3 +34,7 @@ raycast/extensions), so the core artifact must travel with the sources.
 ## License
 
 MIT — the bundled `@dualtran/core` portion is MPL-2.0.
+
+## Tests
+
+Raycast only runs on macOS inside the Raycast app, so this repository has no host-level E2E. `npm test` covers the provider catalogue (projection, alias dedupe, ordering), the `lowest` reasoning resolution, preferences sanitisation, the bridge, and a manifest contract test (command present, provider/reasoning dropdowns, key stored as a password).
