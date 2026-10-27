@@ -6,6 +6,7 @@ const googleSettings = {
   sourceLanguage: "auto",
   targetLanguage: "en",
   aiProvider: "openai",
+  aiReasoning: "lowest",
   aiApiKey: "",
   aiModel: "",
   aiBaseUrl: "",

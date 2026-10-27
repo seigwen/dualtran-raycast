@@ -1,6 +1,7 @@
 import { Action, ActionPanel, Clipboard, Detail } from "@raycast/api";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { createBridge } from "./util/bridge";
+import { withProviderOverrides } from "./util/effective-settings";
 import { loadSettings, DualTranSettings } from "./util/preferences";
 import { buildResultMarkdown } from "./util/markdown";
 import { QUICK_TARGET_LANGUAGES, languageName } from "./util/languages";
@@ -22,10 +23,11 @@ export default function TranslateClipboard() {
         if (!original) {
           throw new Error("The clipboard is empty.");
         }
+        const effective = await withProviderOverrides({ ...settings, targetLanguage: language });
         const bridge = createBridge({
           core: core as never,
           fetchImpl: null,
-          getSettings: () => ({ ...settings, targetLanguage: language }),
+          getSettings: () => effective,
         });
         const [translated] = await bridge.translateBlocks([original]);
         setState({ status: "done", translated: translated ?? "", original });

@@ -7,9 +7,12 @@ export interface DualTranSettings {
   sourceLanguage: string;
   targetLanguage: string;
   aiProvider: string;
+  aiReasoning: string;
   aiApiKey: string;
   aiModel: string;
   aiBaseUrl: string;
+  /** Resolved request value ("lowest" already expanded); never persisted. */
+  aiReasoningDepth?: string;
 }
 
 export const DEFAULT_SETTINGS: DualTranSettings = {
@@ -17,6 +20,7 @@ export const DEFAULT_SETTINGS: DualTranSettings = {
   sourceLanguage: "auto",
   targetLanguage: "en",
   aiProvider: "openai",
+  aiReasoning: "lowest",
   aiApiKey: "",
   aiModel: "",
   aiBaseUrl: "",
@@ -33,7 +37,15 @@ export function sanitizeSettings(raw: unknown): DualTranSettings {
   if (source.engine === "google" || source.engine === "ai") {
     settings.engine = source.engine;
   }
-  const stringKeys = ["sourceLanguage", "targetLanguage", "aiProvider", "aiApiKey", "aiModel", "aiBaseUrl"] as const;
+  const stringKeys = [
+    "sourceLanguage",
+    "targetLanguage",
+    "aiProvider",
+    "aiReasoning",
+    "aiApiKey",
+    "aiModel",
+    "aiBaseUrl",
+  ] as const;
   for (const key of stringKeys) {
     if (typeof source[key] === "string") {
       settings[key] = source[key] as string;

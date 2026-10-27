@@ -25,6 +25,7 @@ export interface CoreLike {
   }): Promise<string[]>;
   streamChat(args: {
     provider: string;
+    reasoningDepth?: string;
     apiKey: string;
     model: string;
     messages: Array<{ role: string; content: string }>;
@@ -74,6 +75,7 @@ export function createBridge({
         apiKey: settings.aiApiKey,
         model: settings.aiModel,
         messages,
+        reasoningDepth: settings.aiReasoningDepth || "",
         extra: settings.aiBaseUrl ? { baseURL: settings.aiBaseUrl } : {},
         store: null,
         onChunk: (chunk) => {

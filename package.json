@@ -21,6 +21,12 @@
       "title": "Translate Clipboard",
       "description": "Translate the clipboard contents.",
       "mode": "view"
+    },
+    {
+      "name": "choose-ai-provider",
+      "title": "Choose AI Provider",
+      "description": "Pick from the built-in providers and everything models.dev lists.",
+      "mode": "view"
     }
   ],
   "preferences": [
@@ -53,7 +59,7 @@
     {
       "name": "targetLanguage",
       "title": "Target Language",
-      "description": "Language code to translate into (en, zh-CN, ja, \u2026).",
+      "description": "Language code to translate into (en, zh-CN, ja, …).",
       "type": "textfield",
       "required": false,
       "default": "en"
@@ -61,10 +67,102 @@
     {
       "name": "aiProvider",
       "title": "AI Provider",
-      "description": "Provider id (openai, anthropic, google, deepseek, \u2026).",
-      "type": "textfield",
+      "description": "Built-in providers. Run “Choose AI Provider” for the 200+ providers from models.dev (the pick is remembered).",
+      "type": "dropdown",
       "required": false,
-      "default": "openai"
+      "default": "openai",
+      "data": [
+        {
+          "title": "OpenAI",
+          "value": "openai"
+        },
+        {
+          "title": "Google Gemini",
+          "value": "google-gemini"
+        },
+        {
+          "title": "DeepSeek",
+          "value": "deepseek"
+        },
+        {
+          "title": "Moonshot",
+          "value": "moonshot"
+        },
+        {
+          "title": "Zhipu",
+          "value": "zhipu"
+        },
+        {
+          "title": "Groq",
+          "value": "groq"
+        },
+        {
+          "title": "Mistral",
+          "value": "mistral"
+        },
+        {
+          "title": "xAI",
+          "value": "xai"
+        },
+        {
+          "title": "OpenRouter",
+          "value": "openrouter"
+        },
+        {
+          "title": "SiliconFlow",
+          "value": "siliconflow"
+        },
+        {
+          "title": "Ollama (local)",
+          "value": "ollama"
+        }
+      ]
+    },
+    {
+      "name": "aiReasoning",
+      "title": "AI Reasoning Effort",
+      "description": "“Lowest” uses the smallest level the selected model accepts; unsupported levels are dropped.",
+      "type": "dropdown",
+      "required": false,
+      "default": "lowest",
+      "data": [
+        {
+          "title": "Lowest (default)",
+          "value": "lowest"
+        },
+        {
+          "title": "Provider default",
+          "value": "default"
+        },
+        {
+          "title": "None",
+          "value": "none"
+        },
+        {
+          "title": "Minimal",
+          "value": "minimal"
+        },
+        {
+          "title": "Low",
+          "value": "low"
+        },
+        {
+          "title": "Medium",
+          "value": "medium"
+        },
+        {
+          "title": "High",
+          "value": "high"
+        },
+        {
+          "title": "XHigh",
+          "value": "xhigh"
+        },
+        {
+          "title": "Max",
+          "value": "max"
+        }
+      ]
     },
     {
       "name": "aiApiKey",
