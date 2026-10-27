@@ -1,4 +1,4 @@
-import { Action, ActionPanel, Icon, List, Toast, showToast } from "@raycast/api";
+import { Action, ActionPanel, Icon, Keyboard, List, Toast, showToast } from "@raycast/api";
 import { useCallback, useEffect, useState } from "react";
 import { buildProviderList, type CatalogProvider } from "./util/providers";
 import { loadCatalog, loadOverride, saveOverride } from "./util/provider-cache";
@@ -66,7 +66,7 @@ export default function ChooseAiProvider() {
           <Action
             title="Refresh Catalogue"
             icon={Icon.ArrowClockwise}
-            shortcut={{ modifiers: ["cmd"], key: "r" }}
+            shortcut={Keyboard.Shortcut.Common.Refresh}
             onAction={() => void refresh(true)}
           />
           <Action title="Reset to Preference" onAction={() => void reset()} />

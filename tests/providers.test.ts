@@ -23,7 +23,11 @@ const raw = {
     api: "https://generativelanguage.googleapis.com/v1beta",
     models: { "gemini-2.5-pro": { reasoning_options: [{ type: "effort", values: ["high", "low"] }] } },
   },
-  toggleonly: { name: "Toggle Only", api: "https://toggle.example/v1", models: { thinker: { reasoning_options: [{ type: "toggle" }] } } },
+  toggleonly: {
+    name: "Toggle Only",
+    api: "https://toggle.example/v1",
+    models: { thinker: { reasoning_options: [{ type: "toggle" }] } },
+  },
   "no-api": { name: "No API", models: { m: {} } },
 };
 

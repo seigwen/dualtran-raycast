@@ -20,15 +20,39 @@ export interface BuiltInProvider {
 
 export const BUILTINS: BuiltInProvider[] = [
   { id: "openai", name: "OpenAI", dev: "openai", api: "https://api.openai.com/v1", model: "gpt-4o-mini" },
-  { id: "google-gemini", name: "Google Gemini", dev: "google", api: "https://generativelanguage.googleapis.com/v1beta/openai", model: "gemini-2.5-flash" },
+  {
+    id: "google-gemini",
+    name: "Google Gemini",
+    dev: "google",
+    api: "https://generativelanguage.googleapis.com/v1beta/openai",
+    model: "gemini-2.5-flash",
+  },
   { id: "deepseek", name: "DeepSeek", dev: "deepseek", api: "https://api.deepseek.com/v1", model: "deepseek-chat" },
-  { id: "moonshot", name: "Moonshot", dev: "moonshotai", api: "https://api.moonshot.ai/v1", model: "kimi-k2-0905-preview" },
+  {
+    id: "moonshot",
+    name: "Moonshot",
+    dev: "moonshotai",
+    api: "https://api.moonshot.ai/v1",
+    model: "kimi-k2-0905-preview",
+  },
   { id: "zhipu", name: "Zhipu", dev: "zhipuai", api: "https://open.bigmodel.cn/api/paas/v4", model: "glm-4.6" },
   { id: "groq", name: "Groq", dev: "groq", api: "https://api.groq.com/openai/v1", model: "llama-3.3-70b-versatile" },
   { id: "mistral", name: "Mistral", dev: "mistral", api: "https://api.mistral.ai/v1", model: "mistral-large-latest" },
   { id: "xai", name: "xAI", dev: "grok", api: "https://api.x.ai/v1", model: "grok-4" },
-  { id: "openrouter", name: "OpenRouter", dev: "openrouter", api: "https://openrouter.ai/api/v1", model: "openai/gpt-4o-mini" },
-  { id: "siliconflow", name: "SiliconFlow", dev: "siliconflow", api: "https://api.siliconflow.cn/v1", model: "deepseek-ai/DeepSeek-V3" },
+  {
+    id: "openrouter",
+    name: "OpenRouter",
+    dev: "openrouter",
+    api: "https://openrouter.ai/api/v1",
+    model: "openai/gpt-4o-mini",
+  },
+  {
+    id: "siliconflow",
+    name: "SiliconFlow",
+    dev: "siliconflow",
+    api: "https://api.siliconflow.cn/v1",
+    model: "deepseek-ai/DeepSeek-V3",
+  },
   { id: "ollama", name: "Ollama (local)", dev: "ollama", api: "http://localhost:11434/v1", model: "llama3.2" },
 ];
 
