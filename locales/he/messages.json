@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "השתמש בספק זה"
+  },
+  "actionRefresh": {
+    "message": "רענן קטלוג"
+  },
+  "actionReset": {
+    "message": "אפס להעדפה"
+  },
+  "sectionBuiltIn": {
+    "message": "מובנה"
+  },
+  "sectionMore": {
+    "message": "עוד (models.dev)"
+  },
+  "actionRetry": {
+    "message": "נסה שוב"
+  },
+  "actionCopy": {
+    "message": "העתק תרגום"
+  },
+  "actionPaste": {
+    "message": "הדבק תרגום"
+  },
+  "sectionTranslateInto": {
+    "message": "תרגם ל"
+  },
+  "toastSetModel": {
+    "message": "הגדר מודל בהעדפות"
+  },
+  "toastModel": {
+    "message": "מודל: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "שוב משתמש בספק ההעדפות"
+  }
+}

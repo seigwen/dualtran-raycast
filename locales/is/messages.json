@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Nota þennan veitanda"
+  },
+  "actionRefresh": {
+    "message": "Endurnýja skrá"
+  },
+  "actionReset": {
+    "message": "Endurstilla í sjálfgefið"
+  },
+  "sectionBuiltIn": {
+    "message": "Innbyggt"
+  },
+  "sectionMore": {
+    "message": "Meira (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Reyna aftur"
+  },
+  "actionCopy": {
+    "message": "Afrita þýðingu"
+  },
+  "actionPaste": {
+    "message": "Líma þýðingu"
+  },
+  "sectionTranslateInto": {
+    "message": "Þýða á"
+  },
+  "toastSetModel": {
+    "message": "Stilltu líkan í kjörstillingum"
+  },
+  "toastModel": {
+    "message": "Líkan: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Notar aftur valda veituna"
+  }
+}

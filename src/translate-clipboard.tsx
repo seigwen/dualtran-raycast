@@ -1,3 +1,4 @@
+import { t } from "./i18n";
 import { Action, ActionPanel, Clipboard, Detail } from "@raycast/api";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { createBridge } from "./util/bridge";
@@ -52,7 +53,7 @@ export default function TranslateClipboard() {
         markdown={`⚠️ ${state.error}`}
         actions={
           <ActionPanel>
-            <Action title="Retry" onAction={() => void run(targetLanguage)} />
+            <Action title={t("actionRetry")} onAction={() => void run(targetLanguage)} />
           </ActionPanel>
         }
       />
@@ -64,9 +65,9 @@ export default function TranslateClipboard() {
       markdown={buildResultMarkdown(state.translated, state.original, languageName(targetLanguage))}
       actions={
         <ActionPanel>
-          <Action.CopyToClipboard title="Copy Translation" content={state.translated} />
-          <Action.Paste title="Paste Translation" content={state.translated} />
-          <ActionPanel.Section title="Translate into">
+          <Action.CopyToClipboard title={t("actionCopy")} content={state.translated} />
+          <Action.Paste title={t("actionPaste")} content={state.translated} />
+          <ActionPanel.Section title={t("sectionTranslateInto")}>
             {QUICK_TARGET_LANGUAGES.map((language) => (
               <Action key={language.code} title={language.name} onAction={() => setTargetLanguage(language.code)} />
             ))}

@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Deze provider gebruiken"
+  },
+  "actionRefresh": {
+    "message": "Catalogus vernieuwen"
+  },
+  "actionReset": {
+    "message": "Terugzetten naar voorkeur"
+  },
+  "sectionBuiltIn": {
+    "message": "Ingebouwd"
+  },
+  "sectionMore": {
+    "message": "Meer (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Opnieuw proberen"
+  },
+  "actionCopy": {
+    "message": "Vertaling kopiëren"
+  },
+  "actionPaste": {
+    "message": "Vertaling plakken"
+  },
+  "sectionTranslateInto": {
+    "message": "Vertalen naar"
+  },
+  "toastSetModel": {
+    "message": "Stel een model in bij de voorkeuren"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Voorkeursprovider weer in gebruik"
+  }
+}

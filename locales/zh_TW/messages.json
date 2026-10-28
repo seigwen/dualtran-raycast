@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "使用此服務商"
+  },
+  "actionRefresh": {
+    "message": "重新整理目錄"
+  },
+  "actionReset": {
+    "message": "回復為偏好設定"
+  },
+  "sectionBuiltIn": {
+    "message": "內建"
+  },
+  "sectionMore": {
+    "message": "更多（models.dev）"
+  },
+  "actionRetry": {
+    "message": "重試"
+  },
+  "actionCopy": {
+    "message": "複製譯文"
+  },
+  "actionPaste": {
+    "message": "貼上譯文"
+  },
+  "sectionTranslateInto": {
+    "message": "翻譯成"
+  },
+  "toastSetModel": {
+    "message": "請在偏好設定裡選擇一個模型"
+  },
+  "toastModel": {
+    "message": "模型：$MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "已回復使用偏好設定裡的服務商"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Izmantot šo pakalpojumu sniedzēju"
+  },
+  "actionRefresh": {
+    "message": "Atjaunināt katalogu"
+  },
+  "actionReset": {
+    "message": "Atiestatīt uz izvēlēto"
+  },
+  "sectionBuiltIn": {
+    "message": "Iebūvēts"
+  },
+  "sectionMore": {
+    "message": "Vairāk (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Mēģināt vēlreiz"
+  },
+  "actionCopy": {
+    "message": "Kopēt tulkojumu"
+  },
+  "actionPaste": {
+    "message": "Ielīmēt tulkojumu"
+  },
+  "sectionTranslateInto": {
+    "message": "Tulkot uz"
+  },
+  "toastSetModel": {
+    "message": "Iestatiet modeli izvēlnē"
+  },
+  "toastModel": {
+    "message": "Modelis: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Atkal tiek izmantots preferenču nodrošinātājs"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Utilizar este fornecedor"
+  },
+  "actionRefresh": {
+    "message": "Atualizar catálogo"
+  },
+  "actionReset": {
+    "message": "Repor preferência"
+  },
+  "sectionBuiltIn": {
+    "message": "Integrado"
+  },
+  "sectionMore": {
+    "message": "Mais (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Tentar novamente"
+  },
+  "actionCopy": {
+    "message": "Copiar tradução"
+  },
+  "actionPaste": {
+    "message": "Colar tradução"
+  },
+  "sectionTranslateInto": {
+    "message": "Traduzir para"
+  },
+  "toastSetModel": {
+    "message": "Defina um modelo nas preferências"
+  },
+  "toastModel": {
+    "message": "Modelo: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "A usar novamente o fornecedor de preferência"
+  }
+}

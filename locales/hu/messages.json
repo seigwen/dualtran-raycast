@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Szolgáltató használata"
+  },
+  "actionRefresh": {
+    "message": "Katalógus frissítése"
+  },
+  "actionReset": {
+    "message": "Visszaállítás az alapértelmezettre"
+  },
+  "sectionBuiltIn": {
+    "message": "Beépített"
+  },
+  "sectionMore": {
+    "message": "Továbbiak (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Újrapróbálás"
+  },
+  "actionCopy": {
+    "message": "Fordítás másolása"
+  },
+  "actionPaste": {
+    "message": "Fordítás beillesztése"
+  },
+  "sectionTranslateInto": {
+    "message": "Fordítás nyelve"
+  },
+  "toastSetModel": {
+    "message": "Állítson be egy modellt a beállításokban"
+  },
+  "toastModel": {
+    "message": "Modell: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Ismét a preferált szolgáltató használata"
+  }
+}

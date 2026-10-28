@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Use This Provider"
+  },
+  "actionRefresh": {
+    "message": "Refresh Catalogue"
+  },
+  "actionReset": {
+    "message": "Reset to Preference"
+  },
+  "sectionBuiltIn": {
+    "message": "Built-in"
+  },
+  "sectionMore": {
+    "message": "More (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Retry"
+  },
+  "actionCopy": {
+    "message": "Copy Translation"
+  },
+  "actionPaste": {
+    "message": "Paste Translation"
+  },
+  "sectionTranslateInto": {
+    "message": "Translate into"
+  },
+  "toastSetModel": {
+    "message": "Set a model in the preferences"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Using the preference provider again"
+  }
+}

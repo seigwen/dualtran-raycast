@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Použít tohoto poskytovatele"
+  },
+  "actionRefresh": {
+    "message": "Obnovit katalog"
+  },
+  "actionReset": {
+    "message": "Obnovit výchozí"
+  },
+  "sectionBuiltIn": {
+    "message": "Vestavěné"
+  },
+  "sectionMore": {
+    "message": "Další (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Zkusit znovu"
+  },
+  "actionCopy": {
+    "message": "Kopírovat překlad"
+  },
+  "actionPaste": {
+    "message": "Vložit překlad"
+  },
+  "sectionTranslateInto": {
+    "message": "Přeložit do"
+  },
+  "toastSetModel": {
+    "message": "Nastavte model v předvolbách"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Opět se používá preferovaný poskytovatel"
+  }
+}

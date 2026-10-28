@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Bu Sağlayıcıyı Kullan"
+  },
+  "actionRefresh": {
+    "message": "Kataloğu Yenile"
+  },
+  "actionReset": {
+    "message": "Tercihe Sıfırla"
+  },
+  "sectionBuiltIn": {
+    "message": "Yerleşik"
+  },
+  "sectionMore": {
+    "message": "Daha Fazla (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Yeniden Dene"
+  },
+  "actionCopy": {
+    "message": "Çeviriyi Kopyala"
+  },
+  "actionPaste": {
+    "message": "Çeviriyi Yapıştır"
+  },
+  "sectionTranslateInto": {
+    "message": "Şu dile çevir"
+  },
+  "toastSetModel": {
+    "message": "Tercihlerde bir model ayarlayın"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Tercih sağlayıcısı yeniden kullanılıyor"
+  }
+}

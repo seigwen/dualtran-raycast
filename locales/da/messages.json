@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Brug denne udbyder"
+  },
+  "actionRefresh": {
+    "message": "Opdater katalog"
+  },
+  "actionReset": {
+    "message": "Nulstil til præference"
+  },
+  "sectionBuiltIn": {
+    "message": "Indbygget"
+  },
+  "sectionMore": {
+    "message": "Mere (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Prøv igen"
+  },
+  "actionCopy": {
+    "message": "Kopier oversættelse"
+  },
+  "actionPaste": {
+    "message": "Indsæt oversættelse"
+  },
+  "sectionTranslateInto": {
+    "message": "Oversæt til"
+  },
+  "toastSetModel": {
+    "message": "Angiv en model i indstillingerne"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Bruger igen præferenceudbyderen"
+  }
+}

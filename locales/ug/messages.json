@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "بۇ تەمىنلىگۈچىنى ئىشلىتىش"
+  },
+  "actionRefresh": {
+    "message": "كاتالوگنى يېڭىلاش"
+  },
+  "actionReset": {
+    "message": "مايىللىق بويىچە ئەسلىگە قايتۇرۇش"
+  },
+  "sectionBuiltIn": {
+    "message": "ئىچكى قىسىمدا بار"
+  },
+  "sectionMore": {
+    "message": "تېخىمۇ كۆپ (models.dev)"
+  },
+  "actionRetry": {
+    "message": "قايتا سىناش"
+  },
+  "actionCopy": {
+    "message": "تەرجىمىنى كۆچۈرۈش"
+  },
+  "actionPaste": {
+    "message": "تەرجىمىنى چاپلاش"
+  },
+  "sectionTranslateInto": {
+    "message": "تەرجىمە قىلىدىغان تىل"
+  },
+  "toastSetModel": {
+    "message": "مايىللىقتا بىر مودېل تەڭشەڭ"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "ئەۋزەللىك تەمىنلىگۈچىنى قايتا ئىشلىتىۋاتىدۇ"
+  }
+}

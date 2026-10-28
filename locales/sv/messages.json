@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Använd den här leverantören"
+  },
+  "actionRefresh": {
+    "message": "Uppdatera katalogen"
+  },
+  "actionReset": {
+    "message": "Återställ till preferens"
+  },
+  "sectionBuiltIn": {
+    "message": "Inbyggd"
+  },
+  "sectionMore": {
+    "message": "Mer (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Försök igen"
+  },
+  "actionCopy": {
+    "message": "Kopiera översättning"
+  },
+  "actionPaste": {
+    "message": "Klistra in översättning"
+  },
+  "sectionTranslateInto": {
+    "message": "Översätt till"
+  },
+  "toastSetModel": {
+    "message": "Ange en modell i inställningarna"
+  },
+  "toastModel": {
+    "message": "Modell: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Använder inställningsleverantören igen"
+  }
+}

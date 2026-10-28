@@ -1,4 +1,5 @@
 import { Action, ActionPanel, Icon, Keyboard, List, Toast, showToast } from "@raycast/api";
+import { t } from "./i18n";
 import { useCallback, useEffect, useState } from "react";
 import { buildProviderList, type CatalogProvider } from "./util/providers";
 import { loadCatalog, loadOverride, saveOverride } from "./util/provider-cache";
@@ -40,14 +41,14 @@ export default function ChooseAiProvider() {
     await showToast({
       style: Toast.Style.Success,
       title: provider.name,
-      message: model ? `Model: ${model}` : "Set a model in the preferences",
+      message: model ? t("toastModel", { MODEL: model }) : t("toastSetModel"),
     });
   }
 
   async function reset() {
     await saveOverride(null);
     setCurrent(loadSettings().aiProvider);
-    await showToast({ style: Toast.Style.Success, title: "Using the preference provider again" });
+    await showToast({ style: Toast.Style.Success, title: t("toastUsingPreference") });
   }
 
   const builtIns = providers.filter((provider) => provider.builtIn);
@@ -62,14 +63,14 @@ export default function ChooseAiProvider() {
       accessories={[{ text: provider.models[0]?.id || "" }]}
       actions={
         <ActionPanel>
-          <Action title="Use This Provider" onAction={() => void pick(provider)} />
+          <Action title={t("actionUseProvider")} onAction={() => void pick(provider)} />
           <Action
-            title="Refresh Catalogue"
+            title={t("actionRefresh")}
             icon={Icon.ArrowClockwise}
             shortcut={Keyboard.Shortcut.Common.Refresh}
             onAction={() => void refresh(true)}
           />
-          <Action title="Reset to Preference" onAction={() => void reset()} />
+          <Action title={t("actionReset")} onAction={() => void reset()} />
         </ActionPanel>
       }
     />
@@ -77,10 +78,10 @@ export default function ChooseAiProvider() {
 
   return (
     <List isLoading={isLoading} searchBarPlaceholder="Search providers from models.dev">
-      <List.Section title="Built-in" subtitle={String(builtIns.length)}>
+      <List.Section title={t("sectionBuiltIn")} subtitle={String(builtIns.length)}>
         {builtIns.map(item)}
       </List.Section>
-      <List.Section title="More (models.dev)" subtitle={String(catalogue.length)}>
+      <List.Section title={t("sectionMore")} subtitle={String(catalogue.length)}>
         {catalogue.map(item)}
       </List.Section>
     </List>

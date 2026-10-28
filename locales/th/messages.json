@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "ใช้ผู้ให้บริการนี้"
+  },
+  "actionRefresh": {
+    "message": "รีเฟรชแคตตาล็อก"
+  },
+  "actionReset": {
+    "message": "รีเซ็ตเป็นการตั้งค่าเริ่มต้น"
+  },
+  "sectionBuiltIn": {
+    "message": "ในตัว"
+  },
+  "sectionMore": {
+    "message": "เพิ่มเติม (models.dev)"
+  },
+  "actionRetry": {
+    "message": "ลองใหม่"
+  },
+  "actionCopy": {
+    "message": "คัดลอกคำแปล"
+  },
+  "actionPaste": {
+    "message": "วางคำแปล"
+  },
+  "sectionTranslateInto": {
+    "message": "แปลเป็น"
+  },
+  "toastSetModel": {
+    "message": "ตั้งค่าโมเดลในการตั้งค่า"
+  },
+  "toastModel": {
+    "message": "โมเดล: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "กลับมาใช้ผู้ให้บริการตามการตั้งค่าแล้ว"
+  }
+}

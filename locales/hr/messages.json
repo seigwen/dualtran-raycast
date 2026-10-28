@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Koristi ovog pružatelja"
+  },
+  "actionRefresh": {
+    "message": "Osvježi katalog"
+  },
+  "actionReset": {
+    "message": "Vrati na postavku"
+  },
+  "sectionBuiltIn": {
+    "message": "Ugrađeno"
+  },
+  "sectionMore": {
+    "message": "Više (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Pokušaj ponovno"
+  },
+  "actionCopy": {
+    "message": "Kopiraj prijevod"
+  },
+  "actionPaste": {
+    "message": "Zalijepi prijevod"
+  },
+  "sectionTranslateInto": {
+    "message": "Prevedi na"
+  },
+  "toastSetModel": {
+    "message": "Postavite model u postavkama"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Ponovno se koristi pružatelj postavki"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "このプロバイダーを使用"
+  },
+  "actionRefresh": {
+    "message": "カタログを更新"
+  },
+  "actionReset": {
+    "message": "設定に戻す"
+  },
+  "sectionBuiltIn": {
+    "message": "組み込み"
+  },
+  "sectionMore": {
+    "message": "その他 (models.dev)"
+  },
+  "actionRetry": {
+    "message": "再試行"
+  },
+  "actionCopy": {
+    "message": "翻訳をコピー"
+  },
+  "actionPaste": {
+    "message": "翻訳を貼り付け"
+  },
+  "sectionTranslateInto": {
+    "message": "翻訳先"
+  },
+  "toastSetModel": {
+    "message": "設定でモデルを指定してください"
+  },
+  "toastModel": {
+    "message": "モデル: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "設定プロバイダーを再度使用中"
+  }
+}

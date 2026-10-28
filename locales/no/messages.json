@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Bruk denne leverandøren"
+  },
+  "actionRefresh": {
+    "message": "Oppdater katalog"
+  },
+  "actionReset": {
+    "message": "Tilbakestill til preferanse"
+  },
+  "sectionBuiltIn": {
+    "message": "Innebygd"
+  },
+  "sectionMore": {
+    "message": "Mer (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Prøv igjen"
+  },
+  "actionCopy": {
+    "message": "Kopier oversettelse"
+  },
+  "actionPaste": {
+    "message": "Lim inn oversettelse"
+  },
+  "sectionTranslateInto": {
+    "message": "Oversett til"
+  },
+  "toastSetModel": {
+    "message": "Angi en modell i innstillingene"
+  },
+  "toastModel": {
+    "message": "Modell: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Bruker preferanseleverandøren igjen"
+  }
+}

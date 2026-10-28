@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Użyj tego dostawcy"
+  },
+  "actionRefresh": {
+    "message": "Odśwież katalog"
+  },
+  "actionReset": {
+    "message": "Przywróć preferencje"
+  },
+  "sectionBuiltIn": {
+    "message": "Wbudowane"
+  },
+  "sectionMore": {
+    "message": "Więcej (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Ponów"
+  },
+  "actionCopy": {
+    "message": "Kopiuj tłumaczenie"
+  },
+  "actionPaste": {
+    "message": "Wklej tłumaczenie"
+  },
+  "sectionTranslateInto": {
+    "message": "Tłumacz na"
+  },
+  "toastSetModel": {
+    "message": "Ustaw model w preferencjach"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Ponowne użycie dostawcy preferencji"
+  }
+}

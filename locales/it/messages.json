@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Usa questo provider"
+  },
+  "actionRefresh": {
+    "message": "Aggiorna catalogo"
+  },
+  "actionReset": {
+    "message": "Ripristina preferenza"
+  },
+  "sectionBuiltIn": {
+    "message": "Integrati"
+  },
+  "sectionMore": {
+    "message": "Altri (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Riprova"
+  },
+  "actionCopy": {
+    "message": "Copia traduzione"
+  },
+  "actionPaste": {
+    "message": "Incolla traduzione"
+  },
+  "sectionTranslateInto": {
+    "message": "Traduci in"
+  },
+  "toastSetModel": {
+    "message": "Imposta un modello nelle preferenze"
+  },
+  "toastModel": {
+    "message": "Modello: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Uso di nuovo il provider delle preferenze"
+  }
+}

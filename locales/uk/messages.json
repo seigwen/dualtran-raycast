@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Використовувати цього провайдера"
+  },
+  "actionRefresh": {
+    "message": "Оновити каталог"
+  },
+  "actionReset": {
+    "message": "Скинути до налаштувань"
+  },
+  "sectionBuiltIn": {
+    "message": "Вбудовані"
+  },
+  "sectionMore": {
+    "message": "Більше (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Повторити"
+  },
+  "actionCopy": {
+    "message": "Копіювати переклад"
+  },
+  "actionPaste": {
+    "message": "Вставити переклад"
+  },
+  "sectionTranslateInto": {
+    "message": "Перекласти на"
+  },
+  "toastSetModel": {
+    "message": "Установіть модель у налаштуваннях"
+  },
+  "toastModel": {
+    "message": "Модель: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Знову використовується постачальник з налаштувань"
+  }
+}

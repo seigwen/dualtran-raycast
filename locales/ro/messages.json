@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Folosește acest furnizor"
+  },
+  "actionRefresh": {
+    "message": "Reîmprospătează catalogul"
+  },
+  "actionReset": {
+    "message": "Resetează la preferință"
+  },
+  "sectionBuiltIn": {
+    "message": "Încorporat"
+  },
+  "sectionMore": {
+    "message": "Mai multe (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Reîncearcă"
+  },
+  "actionCopy": {
+    "message": "Copiază traducerea"
+  },
+  "actionPaste": {
+    "message": "Lipește traducerea"
+  },
+  "sectionTranslateInto": {
+    "message": "Tradu în"
+  },
+  "toastSetModel": {
+    "message": "Setează un model în preferințe"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Se folosește din nou furnizorul preferat"
+  }
+}

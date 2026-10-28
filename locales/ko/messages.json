@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "이 제공자 사용"
+  },
+  "actionRefresh": {
+    "message": "카탈로그 새로고침"
+  },
+  "actionReset": {
+    "message": "기본 설정으로 재설정"
+  },
+  "sectionBuiltIn": {
+    "message": "내장"
+  },
+  "sectionMore": {
+    "message": "더 보기 (models.dev)"
+  },
+  "actionRetry": {
+    "message": "다시 시도"
+  },
+  "actionCopy": {
+    "message": "번역 복사"
+  },
+  "actionPaste": {
+    "message": "번역 붙여넣기"
+  },
+  "sectionTranslateInto": {
+    "message": "번역 대상"
+  },
+  "toastSetModel": {
+    "message": "환경 설정에서 모델을 설정하세요"
+  },
+  "toastModel": {
+    "message": "모델: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "환경설정 제공자를 다시 사용 중"
+  }
+}

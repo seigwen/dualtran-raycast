@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Использовать этого провайдера"
+  },
+  "actionRefresh": {
+    "message": "Обновить каталог"
+  },
+  "actionReset": {
+    "message": "Сбросить к предпочтениям"
+  },
+  "sectionBuiltIn": {
+    "message": "Встроенные"
+  },
+  "sectionMore": {
+    "message": "Другие (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Повторить"
+  },
+  "actionCopy": {
+    "message": "Копировать перевод"
+  },
+  "actionPaste": {
+    "message": "Вставить перевод"
+  },
+  "sectionTranslateInto": {
+    "message": "Перевести на"
+  },
+  "toastSetModel": {
+    "message": "Укажите модель в настройках"
+  },
+  "toastModel": {
+    "message": "Модель: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Снова используется провайдер из настроек"
+  }
+}

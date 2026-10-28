@@ -222,6 +222,10 @@
     "lint": "ray lint",
     "fix-lint": "ray lint --fix",
     "publish": "ray publish",
-    "test": "jest && node scripts/smoke-core.mjs"
+    "test": "jest && node scripts/smoke-core.mjs",
+    "i18n:build": "node scripts/build-i18n.mjs",
+    "i18n:sync": "node scripts/locale-kit.mjs",
+    "i18n:check": "node scripts/locale-kit.mjs --check",
+    "verify": "npm test && npm run i18n:check"
   }
 }

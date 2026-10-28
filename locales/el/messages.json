@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Χρήση αυτού του παρόχου"
+  },
+  "actionRefresh": {
+    "message": "Ανανέωση καταλόγου"
+  },
+  "actionReset": {
+    "message": "Επαναφορά στις προτιμήσεις"
+  },
+  "sectionBuiltIn": {
+    "message": "Ενσωματωμένο"
+  },
+  "sectionMore": {
+    "message": "Περισσότερα (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Επανάληψη"
+  },
+  "actionCopy": {
+    "message": "Αντιγραφή μετάφρασης"
+  },
+  "actionPaste": {
+    "message": "Επικόλληση μετάφρασης"
+  },
+  "sectionTranslateInto": {
+    "message": "Μετάφραση σε"
+  },
+  "toastSetModel": {
+    "message": "Ορίστε ένα μοντέλο στις προτιμήσεις"
+  },
+  "toastModel": {
+    "message": "Μοντέλο: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Χρήση του παρόχου προτιμήσεων ξανά"
+  }
+}

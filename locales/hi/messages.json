@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "इस प्रदाता का उपयोग करें"
+  },
+  "actionRefresh": {
+    "message": "कैटलॉग रीफ़्रेश करें"
+  },
+  "actionReset": {
+    "message": "प्राथमिकता पर रीसेट करें"
+  },
+  "sectionBuiltIn": {
+    "message": "अंतर्निहित"
+  },
+  "sectionMore": {
+    "message": "अधिक (models.dev)"
+  },
+  "actionRetry": {
+    "message": "पुनः प्रयास करें"
+  },
+  "actionCopy": {
+    "message": "अनुवाद कॉपी करें"
+  },
+  "actionPaste": {
+    "message": "अनुवाद पेस्ट करें"
+  },
+  "sectionTranslateInto": {
+    "message": "इसमें अनुवाद करें"
+  },
+  "toastSetModel": {
+    "message": "प्राथमिकताओं में एक मॉडल सेट करें"
+  },
+  "toastModel": {
+    "message": "मॉडल: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "फिर से प्राथमिकता प्रदाता का उपयोग किया जा रहा है"
+  }
+}

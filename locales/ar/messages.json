@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "استخدام هذا المزود"
+  },
+  "actionRefresh": {
+    "message": "تحديث الكتالوج"
+  },
+  "actionReset": {
+    "message": "إعادة التعيين إلى التفضيل"
+  },
+  "sectionBuiltIn": {
+    "message": "مدمج"
+  },
+  "sectionMore": {
+    "message": "المزيد (models.dev)"
+  },
+  "actionRetry": {
+    "message": "إعادة المحاولة"
+  },
+  "actionCopy": {
+    "message": "نسخ الترجمة"
+  },
+  "actionPaste": {
+    "message": "لصق الترجمة"
+  },
+  "sectionTranslateInto": {
+    "message": "ترجمة إلى"
+  },
+  "toastSetModel": {
+    "message": "قم بتعيين نموذج في التفضيلات"
+  },
+  "toastModel": {
+    "message": "الطراز: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "يتم استخدام مزوّد التفضيلات مرة أخرى"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Dùng nhà cung cấp này"
+  },
+  "actionRefresh": {
+    "message": "Làm mới danh mục"
+  },
+  "actionReset": {
+    "message": "Đặt lại về tùy chọn"
+  },
+  "sectionBuiltIn": {
+    "message": "Tích hợp sẵn"
+  },
+  "sectionMore": {
+    "message": "Thêm (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Thử lại"
+  },
+  "actionCopy": {
+    "message": "Sao chép bản dịch"
+  },
+  "actionPaste": {
+    "message": "Dán bản dịch"
+  },
+  "sectionTranslateInto": {
+    "message": "Dịch sang"
+  },
+  "toastSetModel": {
+    "message": "Đặt một mô hình trong tùy chọn"
+  },
+  "toastModel": {
+    "message": "Mô hình: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Đang dùng lại nhà cung cấp ưu tiên"
+  }
+}

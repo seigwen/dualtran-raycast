@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Utilitza aquest proveïdor"
+  },
+  "actionRefresh": {
+    "message": "Actualitza el catàleg"
+  },
+  "actionReset": {
+    "message": "Restableix a la preferència"
+  },
+  "sectionBuiltIn": {
+    "message": "Integrat"
+  },
+  "sectionMore": {
+    "message": "Més (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Torna-ho a provar"
+  },
+  "actionCopy": {
+    "message": "Copia la traducció"
+  },
+  "actionPaste": {
+    "message": "Enganxa la traducció"
+  },
+  "sectionTranslateInto": {
+    "message": "Tradueix a"
+  },
+  "toastSetModel": {
+    "message": "Estableix un model a les preferències"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Tornant a utilitzar el proveïdor de preferències"
+  }
+}

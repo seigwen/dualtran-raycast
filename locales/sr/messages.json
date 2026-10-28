@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Koristi ovog provajdera"
+  },
+  "actionRefresh": {
+    "message": "Osveži katalog"
+  },
+  "actionReset": {
+    "message": "Vrati na podešavanje"
+  },
+  "sectionBuiltIn": {
+    "message": "Ugrađeno"
+  },
+  "sectionMore": {
+    "message": "Više (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Pokušaj ponovo"
+  },
+  "actionCopy": {
+    "message": "Kopiraj prevod"
+  },
+  "actionPaste": {
+    "message": "Nalepi prevod"
+  },
+  "sectionTranslateInto": {
+    "message": "Prevedi na"
+  },
+  "toastSetModel": {
+    "message": "Podesite model u podešavanjima"
+  },
+  "toastModel": {
+    "message": "Model: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Ponovo se koristi dobavljač preferenci"
+  }
+}

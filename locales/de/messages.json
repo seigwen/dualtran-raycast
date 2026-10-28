@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Diesen Anbieter verwenden"
+  },
+  "actionRefresh": {
+    "message": "Katalog aktualisieren"
+  },
+  "actionReset": {
+    "message": "Auf Präferenz zurücksetzen"
+  },
+  "sectionBuiltIn": {
+    "message": "Integriert"
+  },
+  "sectionMore": {
+    "message": "Mehr (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Erneut versuchen"
+  },
+  "actionCopy": {
+    "message": "Übersetzung kopieren"
+  },
+  "actionPaste": {
+    "message": "Übersetzung einfügen"
+  },
+  "sectionTranslateInto": {
+    "message": "Übersetzen nach"
+  },
+  "toastSetModel": {
+    "message": "Ein Modell in den Einstellungen festlegen"
+  },
+  "toastModel": {
+    "message": "Modell: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Präferenzanbieter wird wieder verwendet"
+  }
+}

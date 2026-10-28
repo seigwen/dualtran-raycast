@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "Käytä tätä palveluntarjoajaa"
+  },
+  "actionRefresh": {
+    "message": "Päivitä luettelo"
+  },
+  "actionReset": {
+    "message": "Palauta oletukseksi"
+  },
+  "sectionBuiltIn": {
+    "message": "Sisäänrakennettu"
+  },
+  "sectionMore": {
+    "message": "Lisää (models.dev)"
+  },
+  "actionRetry": {
+    "message": "Yritä uudelleen"
+  },
+  "actionCopy": {
+    "message": "Kopioi käännös"
+  },
+  "actionPaste": {
+    "message": "Liitä käännös"
+  },
+  "sectionTranslateInto": {
+    "message": "Käännä kielelle"
+  },
+  "toastSetModel": {
+    "message": "Aseta malli asetuksissa"
+  },
+  "toastModel": {
+    "message": "Malli: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "Käytetään jälleen asetuspalveluntarjoajaa"
+  }
+}

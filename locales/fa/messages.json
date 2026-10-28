@@ -1,0 +1,38 @@
+{
+  "actionUseProvider": {
+    "message": "استفاده از این ارائه‌دهنده"
+  },
+  "actionRefresh": {
+    "message": "به‌روزرسانی فهرست"
+  },
+  "actionReset": {
+    "message": "بازنشانی به ترجیح"
+  },
+  "sectionBuiltIn": {
+    "message": "داخلی"
+  },
+  "sectionMore": {
+    "message": "بیشتر (models.dev)"
+  },
+  "actionRetry": {
+    "message": "تلاش مجدد"
+  },
+  "actionCopy": {
+    "message": "کپی ترجمه"
+  },
+  "actionPaste": {
+    "message": "چسباندن ترجمه"
+  },
+  "sectionTranslateInto": {
+    "message": "ترجمه به"
+  },
+  "toastSetModel": {
+    "message": "یک مدل در ترجیحات تنظیم کنید"
+  },
+  "toastModel": {
+    "message": "مدل: $MODEL$"
+  },
+  "toastUsingPreference": {
+    "message": "استفاده مجدد از ارائه‌دهنده ترجیحی"
+  }
+}
