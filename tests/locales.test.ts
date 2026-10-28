@@ -44,6 +44,19 @@ test("the generated bundle matches the catalogues", () => {
   }
 });
 
+test("no user-visible literal bypasses the catalogue", () => {
+  const dir = path.join(ROOT, "src");
+  const offenders: string[] = [];
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith(".tsx")) continue;
+    const source = fs.readFileSync(path.join(dir, file), "utf8");
+    for (const pattern of [/\btitle="/g, /\bplaceholder="/g, /\bmessage:\s*"/g]) {
+      for (const match of source.matchAll(pattern)) offenders.push(`${file}: ${match[0]}`);
+    }
+  }
+  expect(offenders).toEqual([]);
+});
+
 test("locale detection folds the usual tags", () => {
   expect(normalizeTag("zh-CN")).toBe("zh_CN");
   expect(normalizeTag("zh-Hant-TW")).toBe("zh_TW");
