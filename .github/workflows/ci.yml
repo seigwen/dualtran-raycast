@@ -16,6 +16,8 @@ jobs:
         run: npm ci
       - name: Unit + integration tests (jest)
         run: npm test
+      - name: Host conformance (SPEC v2)
+        run: npm run conformance
       - name: Build (ray build)
         run: npm run build
       - name: Lint (ray lint)

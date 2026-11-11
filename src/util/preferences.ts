@@ -15,6 +15,65 @@ export interface DualTranSettings {
   aiReasoningDepth?: string;
 }
 
+/**
+ * Target languages offered by the `targetLanguage` dropdown in package.json
+ * (code → English name), in manifest order, so a stored value is validated
+ * against exactly what the user can pick.
+ */
+export const TARGET_LANGUAGES: { code: string; name: string }[] = [
+  { code: "af", name: "Afrikaans" },
+  { code: "ar", name: "Arabic" },
+  { code: "bg", name: "Bulgarian" },
+  { code: "bn", name: "Bengali" },
+  { code: "ca", name: "Catalan" },
+  { code: "cs", name: "Czech" },
+  { code: "da", name: "Danish" },
+  { code: "de", name: "German" },
+  { code: "el", name: "Greek" },
+  { code: "en", name: "English" },
+  { code: "es", name: "Spanish" },
+  { code: "et", name: "Estonian" },
+  { code: "fa", name: "Persian" },
+  { code: "fi", name: "Finnish" },
+  { code: "fr", name: "French" },
+  { code: "he", name: "Hebrew" },
+  { code: "hi", name: "Hindi" },
+  { code: "hr", name: "Croatian" },
+  { code: "hu", name: "Hungarian" },
+  { code: "id", name: "Indonesian" },
+  { code: "it", name: "Italian" },
+  { code: "ja", name: "Japanese" },
+  { code: "ko", name: "Korean" },
+  { code: "lt", name: "Lithuanian" },
+  { code: "lv", name: "Latvian" },
+  { code: "ms", name: "Malay" },
+  { code: "nl", name: "Dutch" },
+  { code: "no", name: "Norwegian" },
+  { code: "pl", name: "Polish" },
+  { code: "pt", name: "Portuguese" },
+  { code: "pt-BR", name: "Portuguese (Brazil)" },
+  { code: "ro", name: "Romanian" },
+  { code: "ru", name: "Russian" },
+  { code: "sk", name: "Slovak" },
+  { code: "sl", name: "Slovenian" },
+  { code: "sr", name: "Serbian" },
+  { code: "sv", name: "Swedish" },
+  { code: "th", name: "Thai" },
+  { code: "tr", name: "Turkish" },
+  { code: "uk", name: "Ukrainian" },
+  { code: "ur", name: "Urdu" },
+  { code: "vi", name: "Vietnamese" },
+  { code: "zh-CN", name: "Chinese (Simplified)" },
+  { code: "zh-TW", name: "Chinese (Traditional)" },
+];
+
+const TARGET_LANGUAGE_CODES = new Set(TARGET_LANGUAGES.map((language) => language.code));
+
+/** True when the code is one the target-language dropdown actually offers. */
+export function isTargetLanguage(code: unknown): code is string {
+  return typeof code === "string" && TARGET_LANGUAGE_CODES.has(code);
+}
+
 export const DEFAULT_SETTINGS: DualTranSettings = {
   engine: "google",
   sourceLanguage: "auto",
@@ -50,6 +109,11 @@ export function sanitizeSettings(raw: unknown): DualTranSettings {
     if (typeof source[key] === "string") {
       settings[key] = source[key] as string;
     }
+  }
+  // A stale code from an older manifest (or hand-edited storage) is not a
+  // language the dropdown offers: fall back rather than send it to the engine.
+  if (!isTargetLanguage(settings.targetLanguage)) {
+    settings.targetLanguage = DEFAULT_SETTINGS.targetLanguage;
   }
   return settings;
 }

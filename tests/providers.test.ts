@@ -4,8 +4,10 @@ import {
   buildProviderList,
   levelsFor,
   levelsOf,
+  overrideFor,
   projectCatalog,
   resolveReasoning,
+  sortModels,
 } from "../src/util/providers";
 
 const raw = {
@@ -50,17 +52,94 @@ describe("projectCatalog", () => {
 });
 
 describe("buildProviderList", () => {
-  it("puts the built-ins first and drops models.dev alias twins", () => {
+  it("returns ONE alphabetical list with built-ins merged in and alias twins deduped", () => {
     const list = buildProviderList(projectCatalog(raw));
-    expect(list.slice(0, BUILTINS.length).every((provider) => provider.builtIn)).toBe(true);
+    // The six untwinned built-ins keep their catalogue-less fallback model and
+    // are interleaved alphabetically with the catalogue entry (Toggle Only).
+    expect(list.map((provider) => provider.id)).toEqual([
+      "deepseek",
+      "google-gemini",
+      "groq",
+      "mistral",
+      "moonshot",
+      "ollama",
+      "openai",
+      "openrouter",
+      "siliconflow",
+      "toggleonly",
+      "xai",
+      "zhipu",
+    ]);
+    expect(list.every((provider) => typeof provider.builtIn === "boolean")).toBe(true);
+    expect(list.some((provider) => provider.builtIn)).toBe(true);
+    expect(list.some((provider) => !provider.builtIn)).toBe(true);
     expect(list.filter((provider) => provider.id === "moonshot" || provider.id === "moonshotai")).toHaveLength(1);
     expect(list.find((provider) => provider.id === "openai")?.models.map((model) => model.id)).toContain("gpt-5");
+    expect(list.find((provider) => provider.id === "moonshot")?.api).toBe("https://api.moonshot.ai/v1");
+    expect(new Set(list.map((provider) => provider.id)).size).toBe(list.length);
+  });
+
+  it("is alphabetical by display name, not by source", () => {
+    const list = buildProviderList(projectCatalog(raw));
+    const names = list.map((provider) => provider.name);
+    expect(names).toEqual([
+      "DeepSeek",
+      "Google Gemini",
+      "Groq",
+      "Mistral",
+      "Moonshot",
+      "Ollama (local)",
+      "OpenAI",
+      "OpenRouter",
+      "SiliconFlow",
+      "Toggle Only",
+      "xAI",
+      "Zhipu",
+    ]);
+    // The old shape (built-ins first) would start with OpenAI.
+    expect(names[0]).not.toBe("OpenAI");
   });
 
   it("survives a cold catalogue", () => {
     const list = buildProviderList(null);
     expect(list).toHaveLength(BUILTINS.length);
-    expect(list[0].models[0].id).toBe(BUILTINS[0].model);
+    expect(list.every((provider) => provider.builtIn)).toBe(true);
+    expect(list[0].name).toBe("DeepSeek");
+    expect(list.find((provider) => provider.id === "openai")?.models[0].id).toBe(
+      BUILTINS.find((entry) => entry.id === "openai")?.model,
+    );
+  });
+});
+
+describe("sortModels / overrideFor", () => {
+  it("orders a provider's models alphabetically by label", () => {
+    expect(
+      sortModels([
+        { id: "z", label: "Zeta" },
+        { id: "a", label: "Alpha" },
+        { id: "m", label: "mid" },
+      ]),
+    ).toEqual([
+      { id: "a", label: "Alpha" },
+      { id: "m", label: "mid" },
+      { id: "z", label: "Zeta" },
+    ]);
+  });
+
+  it("writes provider id + provider api + the picked model into the override", () => {
+    const provider = {
+      id: "deepseek",
+      name: "DeepSeek",
+      api: "https://api.deepseek.com/v1",
+      models: [],
+      builtIn: true,
+    };
+    expect(overrideFor(provider, "deepseek-v4-flash")).toEqual({
+      id: "deepseek",
+      name: "DeepSeek",
+      api: "https://api.deepseek.com/v1",
+      model: "deepseek-v4-flash",
+    });
   });
 });
 

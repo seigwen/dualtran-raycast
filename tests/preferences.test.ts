@@ -6,7 +6,13 @@ jest.mock("@raycast/api", () => ({ getPreferenceValues: jest.fn() }), { virtual:
 
 import { describe, expect, it, jest } from "@jest/globals";
 import { getPreferenceValues } from "@raycast/api";
-import { DEFAULT_SETTINGS, loadSettings, sanitizeSettings } from "../src/util/preferences";
+import {
+  DEFAULT_SETTINGS,
+  TARGET_LANGUAGES,
+  isTargetLanguage,
+  loadSettings,
+  sanitizeSettings,
+} from "../src/util/preferences";
 
 describe("sanitizeSettings", () => {
   it("returns defaults for malformed input", () => {
@@ -24,6 +30,25 @@ describe("sanitizeSettings", () => {
 
   it("rejects an unknown engine value and non-string fields", () => {
     expect(sanitizeSettings({ engine: "yandex", targetLanguage: 7 })).toEqual(DEFAULT_SETTINGS);
+  });
+
+  it("keeps a target language the dropdown offers, including regional codes", () => {
+    for (const code of ["en", "ja", "zh-CN", "zh-TW", "pt-BR", "ur"]) {
+      expect(sanitizeSettings({ targetLanguage: code }).targetLanguage).toBe(code);
+    }
+  });
+
+  it("falls back to the default for a target language the dropdown does not offer", () => {
+    for (const stale of ["klingon", "", "zh", "EN", "auto"]) {
+      expect(sanitizeSettings({ targetLanguage: stale }).targetLanguage).toBe(DEFAULT_SETTINGS.targetLanguage);
+    }
+  });
+
+  it("offers at least 38 distinct target languages", () => {
+    expect(TARGET_LANGUAGES.length).toBeGreaterThanOrEqual(38);
+    expect(new Set(TARGET_LANGUAGES.map((language) => language.code)).size).toBe(TARGET_LANGUAGES.length);
+    expect(isTargetLanguage(DEFAULT_SETTINGS.targetLanguage)).toBe(true);
+    expect(isTargetLanguage(undefined)).toBe(false);
   });
 });
 

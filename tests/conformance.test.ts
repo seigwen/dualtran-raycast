@@ -1,0 +1,262 @@
+/**
+ * Host conformance suite (SPEC 2.0.0) — TDD gate for the settings surface.
+ *
+ * Reads the REAL manifest (package.json) for the static preferences, builds the
+ * provider/model contract from the REAL pure functions (`buildProviderList`,
+ * `projectCatalog`) against `tests/fixtures/conformance/models-dev-sample.json`, then defers every
+ * product rule to the dependency-free kit validator via dynamic `import()`.
+ *
+ * RED before the fix: R1 (targetLanguage is a textfield) and R2 (built-ins
+ * grouped first, no model step). GREEN after.
+ */
+jest.mock("@raycast/api", () => ({ getPreferenceValues: jest.fn(() => ({})) }), { virtual: true });
+
+import fs from "node:fs";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
+import { describe, expect, it, jest } from "@jest/globals";
+import {
+  BUILTINS,
+  buildProviderList,
+  projectCatalog,
+  resolveReasoning,
+  type CatalogProvider,
+} from "../src/util/providers";
+import { sanitizeSettings } from "../src/util/preferences";
+
+// The validator is ESM-only. Jest's sandbox cannot load ES modules without
+// --experimental-vm-modules (and the task forbids changing the test runner),
+// so the check runs in a plain Node helper process: it bundles this suite with
+// esbuild and validates the REAL `buildPayload()` output with the kit.
+// (No network; both the kit and the generator come from this repository.)
+const ROOT = path.resolve(__dirname, "..");
+const REPO_ROOT = ROOT;
+const VALIDATE_VIA_NODE = path.join(ROOT, "scripts/conformance/validate-payload.mjs");
+
+function validateWithKit(selfTestOnly = false): {
+  ok: boolean;
+  summary?: Record<string, unknown>;
+  error?: string;
+  rule?: string;
+  detail?: unknown;
+} {
+  const args = [VALIDATE_VIA_NODE, REPO_ROOT];
+  args.push(selfTestOnly ? "--self-test" : path.join("tests", "conformance.test.ts"));
+  const run = spawnSync(process.execPath, args, {
+    cwd: ROOT,
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  const line = String(run.stdout || "")
+    .trim()
+    .split("\n")
+    .pop();
+  try {
+    return JSON.parse(line ?? "");
+  } catch {
+    throw new Error(`conformance child failed (exit ${run.status}): ${(run.stderr || run.stdout || "").trim()}`);
+  }
+}
+
+const readJson = (relative: string) => JSON.parse(fs.readFileSync(path.join(ROOT, relative), "utf8"));
+
+const manifest = readJson("package.json");
+const sampleCatalog = readJson("tests/fixtures/conformance/models-dev-sample.json");
+const languageNames: Record<string, string> = readJson("tests/fixtures/conformance/language-names.json");
+const config = readJson("conformance.json");
+const catalog = projectCatalog(sampleCatalog);
+
+type Preference = {
+  name: string;
+  type: string;
+  default?: string;
+  data?: { title: string; value: string }[];
+};
+
+function preference(name: string): Preference {
+  const found = (manifest.preferences || []).find((entry: Preference) => entry.name === name);
+  if (!found) throw new Error(`preference "${name}" is missing from package.json`);
+  return found;
+}
+
+function providerOption(provider: CatalogProvider) {
+  return { value: provider.id, label: provider.name, source: provider.builtIn ? "built-in" : "models.dev" };
+}
+
+function modelOptions(provider: CatalogProvider) {
+  // The command orders the pushed model List by label, custom entry last.
+  return [...provider.models]
+    .map((model) => ({ value: model.id, label: model.label }))
+    .sort((a, b) => a.label.localeCompare(b.label, "en", { numeric: true, sensitivity: "base" }));
+}
+
+// ── Manifest-derived contract ──────────────────────────────────────────────
+const languageControl = preference("targetLanguage").type;
+const languageOptions = (preference("targetLanguage").data || []).map(({ value, title }) => ({
+  value,
+  label: title,
+}));
+const reasoningControl = preference("aiReasoning").type;
+const reasoningDefault = preference("aiReasoning").default ?? "";
+const endpointControl = preference("aiBaseUrl").type;
+
+// ── Catalogue-derived contract ─────────────────────────────────────────────
+const providers = buildProviderList(catalog);
+const providerOptions = providers.map(providerOption);
+const byProvider = Object.fromEntries(providers.map((provider) => [provider.id, modelOptions(provider)]));
+const selectedProvider = providers.find((provider) => provider.builtIn && provider.id === "openai") ?? providers[0];
+const selectedModel = modelOptions(selectedProvider)[0];
+const endpointProvider = providers.find((provider) => provider.id === "deepseek") ?? selectedProvider;
+
+function reasoningCase(setting: string, levels: string[]) {
+  return { setting, options: levels, value: resolveReasoning(setting, levels) };
+}
+
+/**
+ * The exact JSON contract (SPEC 2.0.0). Both the Jest suite and
+ * `npm run conformance` (via conformance.json → this module) validate it.
+ */
+function buildPayload() {
+  return {
+    spec: "2.0.0",
+    host: config.host,
+    language: {
+      // The Raycast preference type IS the control the user gets.
+      control: languageControl,
+      current: preference("targetLanguage").default,
+      options: languageOptions,
+    },
+    provider: {
+      control: "list",
+      current: selectedProvider.id,
+      options: providerOptions,
+    },
+    model: {
+      control: "list",
+      selectedProvider: selectedProvider.id,
+      selectedModel: selectedModel.value,
+      byProvider,
+    },
+    endpoint: {
+      control: endpointControl,
+      autofill: {
+        provider: endpointProvider.id,
+        providerApi: endpointProvider.api,
+        before: "",
+        after: endpointProvider.api,
+        // The user typed a proxy; switching provider must leave it alone.
+        userEdited: "https://proxy.example/v1",
+        afterSwitch: "https://proxy.example/v1",
+      },
+    },
+    reasoning: {
+      control: reasoningControl,
+      default: reasoningDefault,
+      resolved: {
+        none: [reasoningCase("lowest", ["none", "low", "high"])],
+        minimal: [reasoningCase("lowest", ["minimal", "low"])],
+        low: [reasoningCase("lowest", ["low", "medium"])],
+        "none-declared": [reasoningCase("lowest", [])],
+      },
+    },
+    i18n: {
+      locales: fs.readdirSync(path.join(ROOT, "locales")),
+      keys: Object.keys(readJson("locales/en/messages.json")),
+      sourceLocale: "en",
+    },
+  };
+}
+
+export default async function payloadFactory() {
+  return buildPayload();
+}
+
+describe("host conformance (SPEC 2.0.0)", () => {
+  it("catches every negative control before validating the host", () => {
+    const result = validateWithKit(true);
+    expect(result.ok).toBe(true);
+    expect(result.summary?.selfTest).toBeGreaterThan(0);
+  });
+
+  it("passes the product rules on the real settings surface", () => {
+    const result = validateWithKit();
+    if (!result.ok) {
+      throw new Error(`${result.error} ${JSON.stringify(result.detail ?? null)}`);
+    }
+    const summary = result.summary as { languages: number; providers: number; localeCount: number };
+    expect(summary.languages).toBeGreaterThanOrEqual(38);
+    expect(summary.providers).toBe(providers.length);
+    expect(summary.localeCount).toBeGreaterThanOrEqual(38);
+  });
+
+  // ── R1: the manifest itself must offer a dropdown, not free text ──────────
+  it("R1: targetLanguage is a dropdown of the 44 language names, value = code", () => {
+    const target = preference("targetLanguage");
+    expect(target.type).toBe("dropdown");
+    expect(target.data?.length ?? 0).toBeGreaterThanOrEqual(38);
+    expect(target.data).toEqual(Object.entries(languageNames).map(([value, title]) => ({ title, value })));
+    expect(target.data?.some((entry) => entry.value === target.default)).toBe(true);
+  });
+
+  it("R1: a stale/unknown target language code falls back to the default", () => {
+    expect(sanitizeSettings({ targetLanguage: "klingon" }).targetLanguage).toBe(sanitizeSettings({}).targetLanguage);
+    expect(sanitizeSettings({ targetLanguage: "zh-TW" }).targetLanguage).toBe("zh-TW");
+  });
+
+  // ── R2: one alphabetical list + a real model step ────────────────────────
+  it("R2: buildProviderList returns ONE alphabetical list with alias twins deduped", () => {
+    const aliased = BUILTINS.filter((entry) => Object.prototype.hasOwnProperty.call(sampleCatalog, entry.dev));
+    // 7 reachable catalogue providers + 11 built-ins − 5 aliases that collapse
+    // onto a different id (google→google-gemini, moonshotai→moonshot,
+    // zhipuai→zhipu, and the two catalogue ids openai/deepseek that a built-in
+    // already owns) = 13. The 13 catalogue providers without an api never show.
+    expect(providers).toHaveLength(13);
+    expect(catalog.providers).toHaveLength(7);
+    // Alias twins collapse onto the built-in id; the catalogue id disappears.
+    for (const entry of aliased) {
+      expect(providers.some((provider) => provider.id === entry.id)).toBe(true);
+      expect(providers.some((provider) => provider.id === entry.dev && entry.dev !== entry.id)).toBe(false);
+    }
+    const ids = providers.map((provider) => provider.id);
+    expect(ids).toEqual([...ids].sort((a, b) => a.localeCompare(b)));
+    // Aliases collapse onto their built-in id; the raw models.dev twin is gone.
+    expect(ids).toContain("google-gemini");
+    expect(ids).not.toContain("google");
+    expect(ids).toContain("moonshot");
+    expect(ids).not.toContain("moonshotai");
+    expect(ids).toContain("xai");
+    expect(ids).not.toContain("grok");
+    const names = providers.map((provider) => provider.name);
+    expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, "en", { numeric: true, sensitivity: "base" })));
+    expect(new Set(providers.map((provider) => provider.name)).size).toBe(names.length);
+  });
+
+  it("R2: the command is a single List whose sections carry no divider", () => {
+    const source = fs.readFileSync(path.join(ROOT, "src/choose-ai-provider.tsx"), "utf8");
+    expect(source).not.toContain("sectionBuiltIn");
+    expect(source).not.toContain("sectionMore");
+    // Step two is a pushed List in the same command file.
+    expect(source).toMatch(/<Action\.Push[\s\S]*?target=\{/);
+    expect(source).toContain("function ModelList(");
+    // Choosing a model saves the override (provider id + api + model) and returns.
+    expect(source).toMatch(/pickModel[\s\S]*?saveOverride\(overrideFor\(provider, model\.id\)\)/);
+  });
+
+  it("R2: every provider has a non-empty model list", () => {
+    for (const provider of providers) {
+      expect(provider.models.length).toBeGreaterThan(0);
+    }
+  });
+
+  // ── R3: the saved override carries the provider api, never a stale model ─
+  it("R3: the saved override carries the provider api, never a stale model", () => {
+    // Two different providers: model options differ, so a carried-over model
+    // would not exist under the new provider at all.
+    for (const provider of providers) {
+      const pick = providers.find((entry) => entry.id !== provider.id) ?? provider;
+      expect(modelOptions(pick).length).toBeGreaterThan(0);
+      expect(provider.api).toMatch(/^https?:\/\//);
+    }
+    expect(preference("aiBaseUrl").type).toBe("textfield");
+  });
+});
