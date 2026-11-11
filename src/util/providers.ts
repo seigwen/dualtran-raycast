@@ -116,7 +116,12 @@ export function projectCatalog(raw: unknown): ProjectedCatalog {
   return { providers, modelsById, reasoning };
 }
 
-/** Built-ins first (registry order), then the catalogue alphabetically, alias twins removed. */
+/**
+ * ONE list: built-ins and the models.dev catalogue merged and sorted by name,
+ * with alias twins collapsed (google-gemini ⇒ google, moonshot ⇒ moonshotai,
+ * xai ⇒ grok, …). The user never sees a "built-in" section followed by a
+ * "More" section — the picker is alphabetical from top to bottom.
+ */
 export function buildProviderList(catalog: ProjectedCatalog | null): CatalogProvider[] {
   const catalogue = (catalog && catalog.providers) || [];
   const modelsById = (catalog && catalog.modelsById) || {};
@@ -132,7 +137,29 @@ export function buildProviderList(catalog: ProjectedCatalog | null): CatalogProv
     if (BUILTINS.some((entry) => entry.id === provider.id)) continue;
     out.push({ ...provider, builtIn: false });
   }
-  return out;
+  return sortProviders(out);
+}
+
+const providerCollator = (): Intl.Collator => new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+
+/** Alphabetical by display name; the id is the tie-breaker so the order is stable. */
+export function sortProviders(list: CatalogProvider[]): CatalogProvider[] {
+  const compare = providerCollator();
+  return [...list].sort((a, b) => compare.compare(a.name, b.name) || a.id.localeCompare(b.id));
+}
+
+/** Models of one provider, alphabetical by label (the order the model List shows). */
+export function sortModels(models: CatalogModel[]): CatalogModel[] {
+  const compare = providerCollator();
+  return [...models].sort((a, b) => compare.compare(a.label, b.label) || a.id.localeCompare(b.id));
+}
+
+/** The override written when a model is picked: provider id + that provider's api + the model. */
+export function overrideFor(
+  provider: CatalogProvider,
+  modelId: string,
+): { id: string; name: string; api: string; model: string } {
+  return { id: provider.id, name: provider.name, api: provider.api, model: modelId };
 }
 
 /** models.dev id behind a built-in alias. */

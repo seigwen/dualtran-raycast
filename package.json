@@ -59,15 +59,193 @@
     {
       "name": "targetLanguage",
       "title": "Target Language",
-      "description": "Language code to translate into (en, zh-CN, ja, …).",
-      "type": "textfield",
+      "description": "Language to translate into. Pick one of the 44 supported languages.",
+      "type": "dropdown",
       "required": false,
-      "default": "en"
+      "default": "en",
+      "data": [
+        {
+          "title": "Afrikaans",
+          "value": "af"
+        },
+        {
+          "title": "Arabic",
+          "value": "ar"
+        },
+        {
+          "title": "Bulgarian",
+          "value": "bg"
+        },
+        {
+          "title": "Bengali",
+          "value": "bn"
+        },
+        {
+          "title": "Catalan",
+          "value": "ca"
+        },
+        {
+          "title": "Czech",
+          "value": "cs"
+        },
+        {
+          "title": "Danish",
+          "value": "da"
+        },
+        {
+          "title": "German",
+          "value": "de"
+        },
+        {
+          "title": "Greek",
+          "value": "el"
+        },
+        {
+          "title": "English",
+          "value": "en"
+        },
+        {
+          "title": "Spanish",
+          "value": "es"
+        },
+        {
+          "title": "Estonian",
+          "value": "et"
+        },
+        {
+          "title": "Persian",
+          "value": "fa"
+        },
+        {
+          "title": "Finnish",
+          "value": "fi"
+        },
+        {
+          "title": "French",
+          "value": "fr"
+        },
+        {
+          "title": "Hebrew",
+          "value": "he"
+        },
+        {
+          "title": "Hindi",
+          "value": "hi"
+        },
+        {
+          "title": "Croatian",
+          "value": "hr"
+        },
+        {
+          "title": "Hungarian",
+          "value": "hu"
+        },
+        {
+          "title": "Indonesian",
+          "value": "id"
+        },
+        {
+          "title": "Italian",
+          "value": "it"
+        },
+        {
+          "title": "Japanese",
+          "value": "ja"
+        },
+        {
+          "title": "Korean",
+          "value": "ko"
+        },
+        {
+          "title": "Lithuanian",
+          "value": "lt"
+        },
+        {
+          "title": "Latvian",
+          "value": "lv"
+        },
+        {
+          "title": "Malay",
+          "value": "ms"
+        },
+        {
+          "title": "Dutch",
+          "value": "nl"
+        },
+        {
+          "title": "Norwegian",
+          "value": "no"
+        },
+        {
+          "title": "Polish",
+          "value": "pl"
+        },
+        {
+          "title": "Portuguese",
+          "value": "pt"
+        },
+        {
+          "title": "Portuguese (Brazil)",
+          "value": "pt-BR"
+        },
+        {
+          "title": "Romanian",
+          "value": "ro"
+        },
+        {
+          "title": "Russian",
+          "value": "ru"
+        },
+        {
+          "title": "Slovak",
+          "value": "sk"
+        },
+        {
+          "title": "Slovenian",
+          "value": "sl"
+        },
+        {
+          "title": "Serbian",
+          "value": "sr"
+        },
+        {
+          "title": "Swedish",
+          "value": "sv"
+        },
+        {
+          "title": "Thai",
+          "value": "th"
+        },
+        {
+          "title": "Turkish",
+          "value": "tr"
+        },
+        {
+          "title": "Ukrainian",
+          "value": "uk"
+        },
+        {
+          "title": "Urdu",
+          "value": "ur"
+        },
+        {
+          "title": "Vietnamese",
+          "value": "vi"
+        },
+        {
+          "title": "Chinese (Simplified)",
+          "value": "zh-CN"
+        },
+        {
+          "title": "Chinese (Traditional)",
+          "value": "zh-TW"
+        }
+      ]
     },
     {
       "name": "aiProvider",
       "title": "AI Provider",
-      "description": "Built-in providers. Run “Choose AI Provider” for the 200+ providers from models.dev (the pick is remembered).",
+      "description": "Built-in providers only: the Raycast manifest is static, so models.dev cannot be listed here. Run \"Choose AI Provider\" to pick any catalogue provider and then its model; that pick is remembered and wins over this dropdown.",
       "type": "dropdown",
       "required": false,
       "default": "openai",
@@ -121,7 +299,7 @@
     {
       "name": "aiReasoning",
       "title": "AI Reasoning Effort",
-      "description": "“Lowest” uses the smallest level the selected model accepts; unsupported levels are dropped.",
+      "description": "\u201cLowest\u201d uses the smallest level the selected model accepts; unsupported levels are dropped.",
       "type": "dropdown",
       "required": false,
       "default": "lowest",
@@ -226,7 +404,8 @@
     "i18n:build": "node scripts/build-i18n.mjs",
     "i18n:sync": "node scripts/locale-kit.mjs",
     "i18n:check": "node scripts/locale-kit.mjs --check",
-    "verify": "npm test && npm run i18n:check && npm run test:dist",
-    "test:dist": "node scripts/smoke-dist.mjs"
+    "verify": "npm test && npm run i18n:check && npm run test:dist && npm run conformance",
+    "test:dist": "node scripts/smoke-dist.mjs",
+    "conformance": "node scripts/conformance/run.mjs"
   }
 }
