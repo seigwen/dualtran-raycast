@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Χρήση του παρόχου προτιμήσεων ξανά"
+  },
+  "providerPlaceholder": {
+    "message": "Επιλέξτε πάροχο"
+  },
+  "providerRequiredForModel": {
+    "message": "Επιλέξτε πρώτα πάροχο"
+  },
+  "providerRequiredError": {
+    "message": "Επιλέξτε πάροχο AI στις ρυθμίσεις πριν από τη μετάφραση."
   }
 }

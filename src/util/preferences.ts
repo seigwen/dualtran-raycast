@@ -74,11 +74,16 @@ export function isTargetLanguage(code: unknown): code is string {
   return typeof code === "string" && TARGET_LANGUAGE_CODES.has(code);
 }
 
+/**
+ * A fresh install has NOT chosen an AI provider: the default is the empty
+ * string, never a guessed provider (SPEC 2.1). The user must pick one before
+ * any AI translation can run — see `providerRequiredMessage`.
+ */
 export const DEFAULT_SETTINGS: DualTranSettings = {
   engine: "google",
   sourceLanguage: "auto",
   targetLanguage: "en",
-  aiProvider: "openai",
+  aiProvider: "",
   aiReasoning: "lowest",
   aiApiKey: "",
   aiModel: "",
@@ -115,7 +120,14 @@ export function sanitizeSettings(raw: unknown): DualTranSettings {
   if (!isTargetLanguage(settings.targetLanguage)) {
     settings.targetLanguage = DEFAULT_SETTINGS.targetLanguage;
   }
+  // A stored provider is never rewritten (SPEC 2.1 rule 1): an empty value is
+  // the unconfigured state, and any other string is passed through untouched.
   return settings;
+}
+
+/** True when no AI provider has been chosen yet (fresh install / cleared config). */
+export function isProviderUnconfigured(provider: unknown): boolean {
+  return typeof provider !== "string" || provider.trim() === "";
 }
 
 /** Read the extension preferences (Raycast) and normalize them. */

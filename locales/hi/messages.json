@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "फिर से प्राथमिकता प्रदाता का उपयोग किया जा रहा है"
+  },
+  "providerPlaceholder": {
+    "message": "एक प्रदाता चुनें"
+  },
+  "providerRequiredForModel": {
+    "message": "पहले एक प्रदाता चुनें"
+  },
+  "providerRequiredError": {
+    "message": "अनुवाद करने से पहले सेटिंग्स में AI प्रदाता चुनें।"
   }
 }

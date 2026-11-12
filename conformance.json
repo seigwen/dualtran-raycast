@@ -1,17 +1,27 @@
 {
-  "spec": "2.0.0",
+  "spec": "2.1.0",
   "host": "dualtran-raycast",
   "payloadCommand": "node scripts/conformance/validate-payload.mjs . --generate",
   "payloadGenerator": "tests/conformance.test.ts",
   "static": {
-    "files": ["src/choose-ai-provider.tsx", "src/util/providers.ts", "package.json"],
-    "patterns": ["providerSeparator", "__separator__", "__more__", "More (models.dev)", "List.Section"]
+    "files": [
+      "src/choose-ai-provider.tsx",
+      "src/util/providers.ts",
+      "package.json"
+    ],
+    "patterns": [
+      "providerSeparator",
+      "__separator__",
+      "__more__",
+      "More (models.dev)",
+      "List.Section"
+    ]
   },
   "platformLimits": [
     {
       "rule": "R2",
-      "manifestAndModelStep": "Raycast preferences are a static JSON manifest, so the aiProvider dropdown can only list the curated built-ins; models.dev is fetched at runtime and therefore cannot be declared there. The catalogue provider + model picker is the 'choose-ai-provider' List command (provider list → pushed model List), and its pick is stored as a LocalStorage override. The model step is navigation.push inside that command, not a second manifest command.",
-      "note": "Declared as a platform limit: manifest dropdown = curated built-ins, List command = full catalogue + models."
+      "manifestAndModelStep": "Raycast preferences are a static JSON manifest: the aiProvider dropdown can only list the curated built-ins (models.dev is fetched at runtime and cannot be declared there), and the dropdown's first item is the disabled-by-contract empty placeholder {title:'Select a provider', value:''} that ships as the default. The full catalogue provider + model picker is the 'choose-ai-provider' List command (provider list → pushed model List), whose pick is stored as a LocalStorage override. The model step is navigation.push inside that command, not a second manifest command.",
+      "note": "Declared as a platform limit: manifest dropdown = empty placeholder + curated built-ins, List command = full catalogue + models."
     }
   ]
 }

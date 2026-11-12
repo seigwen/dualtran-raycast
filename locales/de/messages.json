@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Präferenzanbieter wird wieder verwendet"
+  },
+  "providerPlaceholder": {
+    "message": "Anbieter auswählen"
+  },
+  "providerRequiredForModel": {
+    "message": "Zuerst einen Anbieter auswählen"
+  },
+  "providerRequiredError": {
+    "message": "Wähle vor dem Übersetzen einen KI-Anbieter in den Einstellungen."
   }
 }

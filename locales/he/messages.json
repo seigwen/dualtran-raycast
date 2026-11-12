@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "שוב משתמש בספק ההעדפות"
+  },
+  "providerPlaceholder": {
+    "message": "בחר ספק"
+  },
+  "providerRequiredForModel": {
+    "message": "בחר תחילה ספק"
+  },
+  "providerRequiredError": {
+    "message": "בחר ספק AI בהגדרות לפני התרגום."
   }
 }

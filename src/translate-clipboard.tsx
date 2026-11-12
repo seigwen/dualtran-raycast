@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { createBridge } from "./util/bridge";
 import { withProviderOverrides } from "./util/effective-settings";
 import { loadSettings, DualTranSettings } from "./util/preferences";
+import { providerRequiredMessage, requiresProvider } from "./util/ai-settings-view";
 import { buildResultMarkdown } from "./util/markdown";
 import { QUICK_TARGET_LANGUAGES, languageName } from "./util/languages";
 import * as core from "dualtran";
@@ -20,6 +21,8 @@ export default function TranslateClipboard() {
     async (language: string) => {
       setState({ status: "loading" });
       try {
+        // SPEC 2.1: refuse before touching the clipboard or the network.
+        if (requiresProvider(settings)) throw new Error(providerRequiredMessage());
         const original = ((await Clipboard.readText()) ?? "").trim();
         if (!original) {
           throw new Error("The clipboard is empty.");

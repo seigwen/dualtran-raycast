@@ -38,6 +38,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Gebruik weer die voorkeurverskaffer",
     },
+    providerPlaceholder: {
+      message: "Kies 'n verskaffer",
+    },
+    providerRequiredForModel: {
+      message: "Kies eers 'n verskaffer",
+    },
+    providerRequiredError: {
+      message: "Kies eers 'n KI-verskaffer in die instellings voordat jy vertaal.",
+    },
   },
   ar: {
     actionUseProvider: {
@@ -75,6 +84,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "يتم استخدام مزوّد التفضيلات مرة أخرى",
+    },
+    providerPlaceholder: {
+      message: "اختر مزوّدًا",
+    },
+    providerRequiredForModel: {
+      message: "اختر مزوّدًا أولًا",
+    },
+    providerRequiredError: {
+      message: "اختر مزوّد ذكاء اصطناعي في الإعدادات قبل الترجمة.",
     },
   },
   ca: {
@@ -114,6 +132,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Tornant a utilitzar el proveïdor de preferències",
     },
+    providerPlaceholder: {
+      message: "Selecciona un proveïdor",
+    },
+    providerRequiredForModel: {
+      message: "Selecciona primer un proveïdor",
+    },
+    providerRequiredError: {
+      message: "Tria un proveïdor d'IA als ajustos abans de traduir.",
+    },
   },
   cs: {
     actionUseProvider: {
@@ -151,6 +178,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Opět se používá preferovaný poskytovatel",
+    },
+    providerPlaceholder: {
+      message: "Vyberte poskytovatele",
+    },
+    providerRequiredForModel: {
+      message: "Nejprve vyberte poskytovatele",
+    },
+    providerRequiredError: {
+      message: "Před překladem vyberte v nastavení poskytovatele AI.",
     },
   },
   da: {
@@ -190,6 +226,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Bruger igen præferenceudbyderen",
     },
+    providerPlaceholder: {
+      message: "Vælg en udbyder",
+    },
+    providerRequiredForModel: {
+      message: "Vælg først en udbyder",
+    },
+    providerRequiredError: {
+      message: "Vælg en AI-udbyder i indstillingerne, før du oversætter.",
+    },
   },
   de: {
     actionUseProvider: {
@@ -227,6 +272,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Präferenzanbieter wird wieder verwendet",
+    },
+    providerPlaceholder: {
+      message: "Anbieter auswählen",
+    },
+    providerRequiredForModel: {
+      message: "Zuerst einen Anbieter auswählen",
+    },
+    providerRequiredError: {
+      message: "Wähle vor dem Übersetzen einen KI-Anbieter in den Einstellungen.",
     },
   },
   el: {
@@ -266,6 +320,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Χρήση του παρόχου προτιμήσεων ξανά",
     },
+    providerPlaceholder: {
+      message: "Επιλέξτε πάροχο",
+    },
+    providerRequiredForModel: {
+      message: "Επιλέξτε πρώτα πάροχο",
+    },
+    providerRequiredError: {
+      message: "Επιλέξτε πάροχο AI στις ρυθμίσεις πριν από τη μετάφραση.",
+    },
   },
   en: {
     actionUseProvider: {
@@ -303,6 +366,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Using the preference provider again",
+    },
+    providerPlaceholder: {
+      message: "Select a provider",
+    },
+    providerRequiredForModel: {
+      message: "Select a provider first",
+    },
+    providerRequiredError: {
+      message: "Choose an AI provider in settings before translating.",
     },
   },
   es: {
@@ -342,6 +414,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Usando de nuevo el proveedor de preferencias",
     },
+    providerPlaceholder: {
+      message: "Selecciona un proveedor",
+    },
+    providerRequiredForModel: {
+      message: "Selecciona primero un proveedor",
+    },
+    providerRequiredError: {
+      message: "Elige un proveedor de IA en los ajustes antes de traducir.",
+    },
   },
   fa: {
     actionUseProvider: {
@@ -379,6 +460,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "استفاده مجدد از ارائه‌دهنده ترجیحی",
+    },
+    providerPlaceholder: {
+      message: "یک ارائه‌دهنده انتخاب کنید",
+    },
+    providerRequiredForModel: {
+      message: "ابتدا یک ارائه‌دهنده انتخاب کنید",
+    },
+    providerRequiredError: {
+      message: "پیش از ترجمه، یک ارائه‌دهنده هوش مصنوعی در تنظیمات انتخاب کنید.",
     },
   },
   fi: {
@@ -418,6 +508,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Käytetään jälleen asetuspalveluntarjoajaa",
     },
+    providerPlaceholder: {
+      message: "Valitse palveluntarjoaja",
+    },
+    providerRequiredForModel: {
+      message: "Valitse ensin palveluntarjoaja",
+    },
+    providerRequiredError: {
+      message: "Valitse AI-palveluntarjoaja asetuksista ennen kääntämistä.",
+    },
   },
   fr: {
     actionUseProvider: {
@@ -455,6 +554,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Utilisation à nouveau du fournisseur de préférences",
+    },
+    providerPlaceholder: {
+      message: "Choisir un fournisseur",
+    },
+    providerRequiredForModel: {
+      message: "Choisissez d'abord un fournisseur",
+    },
+    providerRequiredError: {
+      message: "Choisissez un fournisseur d'IA dans les préférences avant de traduire.",
     },
   },
   he: {
@@ -494,6 +602,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "שוב משתמש בספק ההעדפות",
     },
+    providerPlaceholder: {
+      message: "בחר ספק",
+    },
+    providerRequiredForModel: {
+      message: "בחר תחילה ספק",
+    },
+    providerRequiredError: {
+      message: "בחר ספק AI בהגדרות לפני התרגום.",
+    },
   },
   hi: {
     actionUseProvider: {
@@ -531,6 +648,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "फिर से प्राथमिकता प्रदाता का उपयोग किया जा रहा है",
+    },
+    providerPlaceholder: {
+      message: "एक प्रदाता चुनें",
+    },
+    providerRequiredForModel: {
+      message: "पहले एक प्रदाता चुनें",
+    },
+    providerRequiredError: {
+      message: "अनुवाद करने से पहले सेटिंग्स में AI प्रदाता चुनें।",
     },
   },
   hr: {
@@ -570,6 +696,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Ponovno se koristi pružatelj postavki",
     },
+    providerPlaceholder: {
+      message: "Odaberite pružatelja",
+    },
+    providerRequiredForModel: {
+      message: "Najprije odaberite pružatelja",
+    },
+    providerRequiredError: {
+      message: "Prije prevođenja odaberite AI pružatelja u postavkama.",
+    },
   },
   hu: {
     actionUseProvider: {
@@ -607,6 +742,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Ismét a preferált szolgáltató használata",
+    },
+    providerPlaceholder: {
+      message: "Válasszon szolgáltatót",
+    },
+    providerRequiredForModel: {
+      message: "Először válasszon szolgáltatót",
+    },
+    providerRequiredError: {
+      message: "Fordítás előtt válasszon AI-szolgáltatót a beállításokban.",
     },
   },
   is: {
@@ -646,6 +790,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Notar aftur valda veituna",
     },
+    providerPlaceholder: {
+      message: "Veldu þjónustuveitanda",
+    },
+    providerRequiredForModel: {
+      message: "Veldu fyrst þjónustuveitanda",
+    },
+    providerRequiredError: {
+      message: "Veldu AI-þjónustuveitanda í stillingum áður en þú þýðir.",
+    },
   },
   it: {
     actionUseProvider: {
@@ -683,6 +836,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Uso di nuovo il provider delle preferenze",
+    },
+    providerPlaceholder: {
+      message: "Seleziona un provider",
+    },
+    providerRequiredForModel: {
+      message: "Seleziona prima un provider",
+    },
+    providerRequiredError: {
+      message: "Scegli un provider AI nelle preferenze prima di tradurre.",
     },
   },
   ja: {
@@ -722,6 +884,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "設定プロバイダーを再度使用中",
     },
+    providerPlaceholder: {
+      message: "プロバイダーを選択",
+    },
+    providerRequiredForModel: {
+      message: "先にプロバイダーを選択してください",
+    },
+    providerRequiredError: {
+      message: "翻訳する前に設定で AI プロバイダーを選択してください。",
+    },
   },
   ko: {
     actionUseProvider: {
@@ -759,6 +930,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "환경설정 제공자를 다시 사용 중",
+    },
+    providerPlaceholder: {
+      message: "공급자 선택",
+    },
+    providerRequiredForModel: {
+      message: "먼저 공급자를 선택하세요",
+    },
+    providerRequiredError: {
+      message: "번역하기 전에 설정에서 AI 공급자를 선택하세요.",
     },
   },
   lv: {
@@ -798,6 +978,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Atkal tiek izmantots preferenču nodrošinātājs",
     },
+    providerPlaceholder: {
+      message: "Izvēlieties pakalpojumu sniedzēju",
+    },
+    providerRequiredForModel: {
+      message: "Vispirms izvēlieties pakalpojumu sniedzēju",
+    },
+    providerRequiredError: {
+      message: "Pirms tulkošanas iestatījumos izvēlieties AI pakalpojumu sniedzēju.",
+    },
   },
   nl: {
     actionUseProvider: {
@@ -835,6 +1024,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Voorkeursprovider weer in gebruik",
+    },
+    providerPlaceholder: {
+      message: "Kies een provider",
+    },
+    providerRequiredForModel: {
+      message: "Kies eerst een provider",
+    },
+    providerRequiredError: {
+      message: "Kies voordat je vertaalt een AI-provider in de instellingen.",
     },
   },
   no: {
@@ -874,6 +1072,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Bruker preferanseleverandøren igjen",
     },
+    providerPlaceholder: {
+      message: "Velg en leverandør",
+    },
+    providerRequiredForModel: {
+      message: "Velg først en leverandør",
+    },
+    providerRequiredError: {
+      message: "Velg en AI-leverandør i innstillingene før du oversetter.",
+    },
   },
   pl: {
     actionUseProvider: {
@@ -911,6 +1118,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Ponowne użycie dostawcy preferencji",
+    },
+    providerPlaceholder: {
+      message: "Wybierz dostawcę",
+    },
+    providerRequiredForModel: {
+      message: "Najpierw wybierz dostawcę",
+    },
+    providerRequiredError: {
+      message: "Przed tłumaczeniem wybierz dostawcę AI w ustawieniach.",
     },
   },
   pt_BR: {
@@ -950,6 +1166,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Usando o provedor de preferência novamente",
     },
+    providerPlaceholder: {
+      message: "Selecione um provedor",
+    },
+    providerRequiredForModel: {
+      message: "Selecione primeiro um provedor",
+    },
+    providerRequiredError: {
+      message: "Escolha um provedor de IA nas preferências antes de traduzir.",
+    },
   },
   pt_PT: {
     actionUseProvider: {
@@ -987,6 +1212,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "A usar novamente o fornecedor de preferência",
+    },
+    providerPlaceholder: {
+      message: "Selecione um fornecedor",
+    },
+    providerRequiredForModel: {
+      message: "Selecione primeiro um fornecedor",
+    },
+    providerRequiredError: {
+      message: "Escolha um fornecedor de IA nas preferências antes de traduzir.",
     },
   },
   ro: {
@@ -1026,6 +1260,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Se folosește din nou furnizorul preferat",
     },
+    providerPlaceholder: {
+      message: "Selectați un furnizor",
+    },
+    providerRequiredForModel: {
+      message: "Selectați mai întâi un furnizor",
+    },
+    providerRequiredError: {
+      message: "Alegeți un furnizor AI din setări înainte de a traduce.",
+    },
   },
   ru: {
     actionUseProvider: {
@@ -1063,6 +1306,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Снова используется провайдер из настроек",
+    },
+    providerPlaceholder: {
+      message: "Выберите провайдера",
+    },
+    providerRequiredForModel: {
+      message: "Сначала выберите провайдера",
+    },
+    providerRequiredError: {
+      message: "Перед переводом выберите провайдера ИИ в настройках.",
     },
   },
   sl: {
@@ -1102,6 +1354,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Ponovno uporabljam ponudnika nastavitev",
     },
+    providerPlaceholder: {
+      message: "Izberite ponudnika",
+    },
+    providerRequiredForModel: {
+      message: "Najprej izberite ponudnika",
+    },
+    providerRequiredError: {
+      message: "Pred prevajanjem izberite ponudnika AI v nastavitvah.",
+    },
   },
   sr: {
     actionUseProvider: {
@@ -1139,6 +1400,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Ponovo se koristi dobavljač preferenci",
+    },
+    providerPlaceholder: {
+      message: "Изаберите пружаоца услуга",
+    },
+    providerRequiredForModel: {
+      message: "Прво изаберите пружаоца услуга",
+    },
+    providerRequiredError: {
+      message: "Пре превођења изаберите AI пружаоца услуга у подешавањима.",
     },
   },
   sv: {
@@ -1178,6 +1448,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Använder inställningsleverantören igen",
     },
+    providerPlaceholder: {
+      message: "Välj en leverantör",
+    },
+    providerRequiredForModel: {
+      message: "Välj först en leverantör",
+    },
+    providerRequiredError: {
+      message: "Välj en AI-leverantör i inställningarna innan du översätter.",
+    },
   },
   th: {
     actionUseProvider: {
@@ -1215,6 +1494,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "กลับมาใช้ผู้ให้บริการตามการตั้งค่าแล้ว",
+    },
+    providerPlaceholder: {
+      message: "เลือกผู้ให้บริการ",
+    },
+    providerRequiredForModel: {
+      message: "เลือกผู้ให้บริการก่อน",
+    },
+    providerRequiredError: {
+      message: "โปรดเลือกผู้ให้บริการ AI ในการตั้งค่าก่อนแปล",
     },
   },
   tr: {
@@ -1254,6 +1542,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Tercih sağlayıcısı yeniden kullanılıyor",
     },
+    providerPlaceholder: {
+      message: "Bir sağlayıcı seçin",
+    },
+    providerRequiredForModel: {
+      message: "Önce bir sağlayıcı seçin",
+    },
+    providerRequiredError: {
+      message: "Çeviri yapmadan önce tercihlerden bir yapay zekâ sağlayıcısı seçin.",
+    },
   },
   ug: {
     actionUseProvider: {
@@ -1291,6 +1588,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "ئەۋزەللىك تەمىنلىگۈچىنى قايتا ئىشلىتىۋاتىدۇ",
+    },
+    providerPlaceholder: {
+      message: "بىر تەمىنلىگۈچى تاللاڭ",
+    },
+    providerRequiredForModel: {
+      message: "ئاۋۋال بىر تەمىنلىگۈچى تاللاڭ",
+    },
+    providerRequiredError: {
+      message: "تەرجىمە قىلىشتىن بۇرۇن تەڭشەكتىكى AI تەمىنلىگۈچىنى تاللاڭ.",
     },
   },
   uk: {
@@ -1330,6 +1636,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "Знову використовується постачальник з налаштувань",
     },
+    providerPlaceholder: {
+      message: "Виберіть постачальника",
+    },
+    providerRequiredForModel: {
+      message: "Спочатку виберіть постачальника",
+    },
+    providerRequiredError: {
+      message: "Перед перекладом виберіть постачальника ШІ в налаштуваннях.",
+    },
   },
   vi: {
     actionUseProvider: {
@@ -1367,6 +1682,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "Đang dùng lại nhà cung cấp ưu tiên",
+    },
+    providerPlaceholder: {
+      message: "Chọn nhà cung cấp",
+    },
+    providerRequiredForModel: {
+      message: "Hãy chọn nhà cung cấp trước",
+    },
+    providerRequiredError: {
+      message: "Hãy chọn nhà cung cấp AI trong cài đặt trước khi dịch.",
     },
   },
   zh_CN: {
@@ -1406,6 +1730,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     toastUsingPreference: {
       message: "已恢复使用偏好设置里的服务商",
     },
+    providerPlaceholder: {
+      message: "请选择 AI 提供商",
+    },
+    providerRequiredForModel: {
+      message: "请先选择提供商",
+    },
+    providerRequiredError: {
+      message: "翻译前请先在设置中选择 AI 提供商。",
+    },
   },
   zh_TW: {
     actionUseProvider: {
@@ -1443,6 +1776,15 @@ export const LOCALES: Record<string, LocaleCatalogue> = {
     },
     toastUsingPreference: {
       message: "已回復使用偏好設定裡的服務商",
+    },
+    providerPlaceholder: {
+      message: "請選擇 AI 提供商",
+    },
+    providerRequiredForModel: {
+      message: "請先選擇提供商",
+    },
+    providerRequiredError: {
+      message: "翻譯前請先在設定中選擇 AI 提供商。",
     },
   },
 };

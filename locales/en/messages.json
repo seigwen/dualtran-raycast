@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Using the preference provider again"
+  },
+  "providerPlaceholder": {
+    "message": "Select a provider"
+  },
+  "providerRequiredForModel": {
+    "message": "Select a provider first"
+  },
+  "providerRequiredError": {
+    "message": "Choose an AI provider in settings before translating."
   }
 }

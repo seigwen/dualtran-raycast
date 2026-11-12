@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Снова используется провайдер из настроек"
+  },
+  "providerPlaceholder": {
+    "message": "Выберите провайдера"
+  },
+  "providerRequiredForModel": {
+    "message": "Сначала выберите провайдера"
+  },
+  "providerRequiredError": {
+    "message": "Перед переводом выберите провайдера ИИ в настройках."
   }
 }

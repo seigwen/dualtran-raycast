@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "กลับมาใช้ผู้ให้บริการตามการตั้งค่าแล้ว"
+  },
+  "providerPlaceholder": {
+    "message": "เลือกผู้ให้บริการ"
+  },
+  "providerRequiredForModel": {
+    "message": "เลือกผู้ให้บริการก่อน"
+  },
+  "providerRequiredError": {
+    "message": "โปรดเลือกผู้ให้บริการ AI ในการตั้งค่าก่อนแปล"
   }
 }

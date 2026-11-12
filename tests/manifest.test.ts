@@ -16,9 +16,7 @@ function preference(name: string) {
 
 describe("Raycast manifest contract", () => {
   it("ships the Choose AI Provider command", () => {
-    const command = (manifest.commands || []).find(
-      (entry: { name: string }) => entry.name === "choose-ai-provider"
-    );
+    const command = (manifest.commands || []).find((entry: { name: string }) => entry.name === "choose-ai-provider");
     expect(command).toBeDefined();
     expect(command.mode).toBe("view");
     expect(fs.existsSync(path.join(__dirname, "..", "src", "choose-ai-provider.tsx"))).toBe(true);
@@ -27,8 +25,14 @@ describe("Raycast manifest contract", () => {
   it("keeps provider and reasoning as dropdowns", () => {
     const provider = preference("aiProvider");
     expect(provider.type).toBe("dropdown");
-    expect(provider.default).toBe("openai");
-    expect(provider.data.length).toBeGreaterThanOrEqual(10);
+    // SPEC 2.1: a fresh install has no provider. The empty placeholder is the
+    // default and the first item; it is never a real choice.
+    expect(provider.default).toBe("");
+    expect(provider.data[0]).toEqual({ title: "Select a provider", value: "" });
+    const providerValues = provider.data.map((entry: { value: string }) => entry.value);
+    expect(providerValues.filter((value: string) => value === "")).toHaveLength(1);
+    expect(provider.data.length).toBeGreaterThanOrEqual(11);
+    expect(providerValues).toContain("openai");
 
     const reasoning = preference("aiReasoning");
     expect(reasoning.type).toBe("dropdown");

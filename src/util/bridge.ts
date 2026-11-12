@@ -5,6 +5,8 @@
  * test touches the vendored core.
  */
 import type { DualTranSettings } from "./preferences";
+import { isProviderUnconfigured } from "./preferences";
+import { providerRequiredErrorFor } from "./ai-settings-view";
 
 export interface FetchResponseLike {
   ok: boolean;
@@ -56,6 +58,11 @@ export function createBridge({
   getSettings: () => DualTranSettings;
 }) {
   async function translateBlocksAi(blocks: string[], settings: DualTranSettings): Promise<string[]> {
+    // SPEC 2.1: no provider means no request at all — never a silent openai
+    // (or any other) substitution on the request path.
+    if (isProviderUnconfigured(settings.aiProvider)) {
+      throw providerRequiredErrorFor(settings.aiProvider);
+    }
     const results: string[] = [];
     for (const content of blocks) {
       const targetLanguageName =

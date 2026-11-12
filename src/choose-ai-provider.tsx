@@ -3,7 +3,8 @@ import { t } from "./i18n";
 import { useCallback, useEffect, useState } from "react";
 import { buildProviderList, overrideFor, sortModels, type CatalogModel, type CatalogProvider } from "./util/providers";
 import { loadCatalog, loadOverride, saveOverride } from "./util/provider-cache";
-import { loadSettings } from "./util/preferences";
+import { isProviderUnconfigured, loadSettings } from "./util/preferences";
+import { buildAiSettingsView } from "./util/ai-settings-view";
 
 /**
  * The picker Raycast preferences cannot hold: every provider models.dev knows,
@@ -11,6 +12,11 @@ import { loadSettings } from "./util/preferences";
  * curated built-ins because it is static). Choosing a provider pushes the model
  * List; choosing a model saves { provider, model, api } and returns, so the
  * pick is remembered and a manifest refresh never loses it.
+ *
+ * SPEC 2.1: while nothing is configured the List leads with the disabled
+ * "Select a provider" placeholder (the same item the settings projection
+ * reports) — it is not a provider and cannot be chosen, so the user can never
+ * fall back to the empty state once a provider exists.
  */
 export default function ChooseAiProvider() {
   const { pop } = useNavigation();
@@ -20,7 +26,9 @@ export default function ChooseAiProvider() {
   const [currentModel, setCurrentModel] = useState("");
 
   const applyOverride = useCallback((override: { id: string; model: string } | null) => {
-    setCurrent(override?.id || loadSettings().aiProvider);
+    const preference = loadSettings().aiProvider;
+    // An unconfigured install has no override: the picker stays on the placeholder.
+    setCurrent(override?.id || preference || "");
     setCurrentModel(override?.model || "");
   }, []);
 
@@ -60,11 +68,33 @@ export default function ChooseAiProvider() {
     pop();
   }
 
+  /**
+   * "Reset to Preference" no longer means "back to openai": it drops the
+   * override, so the picker returns to the provider saved in the manifest
+   * dropdown — or to the empty placeholder when nothing is configured.
+   */
   async function reset() {
     await saveOverride(null);
     applyOverride(null);
-    await showToast({ style: Toast.Style.Success, title: t("toastUsingPreference") });
+    const preference = loadSettings().aiProvider;
+    await showToast({
+      style: Toast.Style.Success,
+      title: isProviderUnconfigured(preference) ? t("providerPlaceholder") : t("toastUsingPreference"),
+    });
   }
+
+  const placeholderSelected = isProviderUnconfigured(current);
+  const view = buildAiSettingsView({ current, providers });
+
+  const placeholderItem = (
+    <List.Item
+      key="__provider_placeholder__"
+      icon={Icon.Circle}
+      title={view.provider.placeholder.label}
+      // The placeholder is informational only: no action, nothing to pick.
+      actions={<ActionPanel />}
+    />
+  );
 
   const providerItem = (provider: CatalogProvider) => (
     <List.Item
@@ -95,6 +125,7 @@ export default function ChooseAiProvider() {
 
   return (
     <List isLoading={isLoading} searchBarPlaceholder={t("searchProvider")}>
+      {placeholderSelected ? placeholderItem : null}
       {providers.map(providerItem)}
     </List>
   );
