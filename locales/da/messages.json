@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Bruger igen præferenceudbyderen"
+  },
+  "providerPlaceholder": {
+    "message": "Vælg en udbyder"
+  },
+  "providerRequiredForModel": {
+    "message": "Vælg først en udbyder"
+  },
+  "providerRequiredError": {
+    "message": "Vælg en AI-udbyder i indstillingerne, før du oversætter."
   }
 }

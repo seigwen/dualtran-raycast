@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Voorkeursprovider weer in gebruik"
+  },
+  "providerPlaceholder": {
+    "message": "Kies een provider"
+  },
+  "providerRequiredForModel": {
+    "message": "Kies eerst een provider"
+  },
+  "providerRequiredError": {
+    "message": "Kies voordat je vertaalt een AI-provider in de instellingen."
   }
 }

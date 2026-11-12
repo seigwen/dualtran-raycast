@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Atkal tiek izmantots preferenču nodrošinātājs"
+  },
+  "providerPlaceholder": {
+    "message": "Izvēlieties pakalpojumu sniedzēju"
+  },
+  "providerRequiredForModel": {
+    "message": "Vispirms izvēlieties pakalpojumu sniedzēju"
+  },
+  "providerRequiredError": {
+    "message": "Pirms tulkošanas iestatījumos izvēlieties AI pakalpojumu sniedzēju."
   }
 }

@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Usando de nuevo el proveedor de preferencias"
+  },
+  "providerPlaceholder": {
+    "message": "Selecciona un proveedor"
+  },
+  "providerRequiredForModel": {
+    "message": "Selecciona primero un proveedor"
+  },
+  "providerRequiredError": {
+    "message": "Elige un proveedor de IA en los ajustes antes de traducir."
   }
 }

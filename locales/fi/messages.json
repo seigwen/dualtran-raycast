@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Käytetään jälleen asetuspalveluntarjoajaa"
+  },
+  "providerPlaceholder": {
+    "message": "Valitse palveluntarjoaja"
+  },
+  "providerRequiredForModel": {
+    "message": "Valitse ensin palveluntarjoaja"
+  },
+  "providerRequiredError": {
+    "message": "Valitse AI-palveluntarjoaja asetuksista ennen kääntämistä."
   }
 }

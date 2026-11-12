@@ -59,4 +59,8 @@ export function createTranslator(preferred: string = systemLocale()) {
 }
 
 export const i18n = createTranslator();
-export const t = i18n.t;
+// Delegating wrappers (not bare references): a destructured `t` would capture
+// whatever `this`/binding the consumer destructured it with.
+export function t(key: string, subs?: Record<string, string | number>): string {
+  return i18n.t(key, subs);
+}

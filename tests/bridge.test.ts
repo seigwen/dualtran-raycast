@@ -1,4 +1,9 @@
 import { describe, expect, it, jest } from "@jest/globals";
+
+// The bridge pulls `isProviderUnconfigured` from preferences, which reads the
+// Raycast runtime: the same virtual mock the other suites use.
+jest.mock("@raycast/api", () => ({ getPreferenceValues: jest.fn(() => ({})) }), { virtual: true });
+
 import { createBridge, normalizeBlocks } from "../src/util/bridge";
 
 const googleSettings = {
@@ -33,7 +38,11 @@ describe("createBridge — google engine", () => {
   it("delegates a normalized batch to core.translateGoogle with the injected fetch", async () => {
     const core = makeCore();
     const fetchImpl = jest.fn();
-    const bridge = createBridge({ core: core as never, fetchImpl: fetchImpl as never, getSettings: () => googleSettings });
+    const bridge = createBridge({
+      core: core as never,
+      fetchImpl: fetchImpl as never,
+      getSettings: () => googleSettings,
+    });
     const out = await bridge.translateBlocks(["Hello", "  World  ", ""]);
     expect(out).toEqual(["T:Hello", "T:World"]);
     expect(core.translateGoogle).toHaveBeenCalledTimes(1);

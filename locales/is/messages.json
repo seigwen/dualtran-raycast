@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Notar aftur valda veituna"
+  },
+  "providerPlaceholder": {
+    "message": "Veldu þjónustuveitanda"
+  },
+  "providerRequiredForModel": {
+    "message": "Veldu fyrst þjónustuveitanda"
+  },
+  "providerRequiredError": {
+    "message": "Veldu AI-þjónustuveitanda í stillingum áður en þú þýðir."
   }
 }

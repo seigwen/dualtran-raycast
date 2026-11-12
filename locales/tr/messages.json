@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Tercih sağlayıcısı yeniden kullanılıyor"
+  },
+  "providerPlaceholder": {
+    "message": "Bir sağlayıcı seçin"
+  },
+  "providerRequiredForModel": {
+    "message": "Önce bir sağlayıcı seçin"
+  },
+  "providerRequiredError": {
+    "message": "Çeviri yapmadan önce tercihlerden bir yapay zekâ sağlayıcısı seçin."
   }
 }

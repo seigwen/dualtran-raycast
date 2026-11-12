@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Ponovno uporabljam ponudnika nastavitev"
+  },
+  "providerPlaceholder": {
+    "message": "Izberite ponudnika"
+  },
+  "providerRequiredForModel": {
+    "message": "Najprej izberite ponudnika"
+  },
+  "providerRequiredError": {
+    "message": "Pred prevajanjem izberite ponudnika AI v nastavitvah."
   }
 }

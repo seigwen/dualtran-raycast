@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Ponowne użycie dostawcy preferencji"
+  },
+  "providerPlaceholder": {
+    "message": "Wybierz dostawcę"
+  },
+  "providerRequiredForModel": {
+    "message": "Najpierw wybierz dostawcę"
+  },
+  "providerRequiredError": {
+    "message": "Przed tłumaczeniem wybierz dostawcę AI w ustawieniach."
   }
 }

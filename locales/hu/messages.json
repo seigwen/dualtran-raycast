@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Ismét a preferált szolgáltató használata"
+  },
+  "providerPlaceholder": {
+    "message": "Válasszon szolgáltatót"
+  },
+  "providerRequiredForModel": {
+    "message": "Először válasszon szolgáltatót"
+  },
+  "providerRequiredError": {
+    "message": "Fordítás előtt válasszon AI-szolgáltatót a beállításokban."
   }
 }

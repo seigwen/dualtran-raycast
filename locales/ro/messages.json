@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Se folosește din nou furnizorul preferat"
+  },
+  "providerPlaceholder": {
+    "message": "Selectați un furnizor"
+  },
+  "providerRequiredForModel": {
+    "message": "Selectați mai întâi un furnizor"
+  },
+  "providerRequiredError": {
+    "message": "Alegeți un furnizor AI din setări înainte de a traduce."
   }
 }

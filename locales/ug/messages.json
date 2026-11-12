@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "ئەۋزەللىك تەمىنلىگۈچىنى قايتا ئىشلىتىۋاتىدۇ"
+  },
+  "providerPlaceholder": {
+    "message": "بىر تەمىنلىگۈچى تاللاڭ"
+  },
+  "providerRequiredForModel": {
+    "message": "ئاۋۋال بىر تەمىنلىگۈچى تاللاڭ"
+  },
+  "providerRequiredError": {
+    "message": "تەرجىمە قىلىشتىن بۇرۇن تەڭشەكتىكى AI تەمىنلىگۈچىنى تاللاڭ."
   }
 }

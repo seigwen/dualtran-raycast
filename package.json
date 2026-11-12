@@ -248,8 +248,12 @@
       "description": "Built-in providers only: the Raycast manifest is static, so models.dev cannot be listed here. Run \"Choose AI Provider\" to pick any catalogue provider and then its model; that pick is remembered and wins over this dropdown.",
       "type": "dropdown",
       "required": false,
-      "default": "openai",
+      "default": "",
       "data": [
+        {
+          "title": "Select a provider",
+          "value": ""
+        },
         {
           "title": "OpenAI",
           "value": "openai"

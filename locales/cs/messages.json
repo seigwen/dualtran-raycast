@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Opět se používá preferovaný poskytovatel"
+  },
+  "providerPlaceholder": {
+    "message": "Vyberte poskytovatele"
+  },
+  "providerRequiredForModel": {
+    "message": "Nejprve vyberte poskytovatele"
+  },
+  "providerRequiredError": {
+    "message": "Před překladem vyberte v nastavení poskytovatele AI."
   }
 }

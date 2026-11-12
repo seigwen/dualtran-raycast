@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Ponovo se koristi dobavljač preferenci"
+  },
+  "providerPlaceholder": {
+    "message": "Изаберите пружаоца услуга"
+  },
+  "providerRequiredForModel": {
+    "message": "Прво изаберите пружаоца услуга"
+  },
+  "providerRequiredError": {
+    "message": "Пре превођења изаберите AI пружаоца услуга у подешавањима."
   }
 }

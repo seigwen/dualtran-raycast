@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Знову використовується постачальник з налаштувань"
+  },
+  "providerPlaceholder": {
+    "message": "Виберіть постачальника"
+  },
+  "providerRequiredForModel": {
+    "message": "Спочатку виберіть постачальника"
+  },
+  "providerRequiredError": {
+    "message": "Перед перекладом виберіть постачальника ШІ в налаштуваннях."
   }
 }

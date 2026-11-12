@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "يتم استخدام مزوّد التفضيلات مرة أخرى"
+  },
+  "providerPlaceholder": {
+    "message": "اختر مزوّدًا"
+  },
+  "providerRequiredForModel": {
+    "message": "اختر مزوّدًا أولًا"
+  },
+  "providerRequiredError": {
+    "message": "اختر مزوّد ذكاء اصطناعي في الإعدادات قبل الترجمة."
   }
 }

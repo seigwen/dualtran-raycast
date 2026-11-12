@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "已恢复使用偏好设置里的服务商"
+  },
+  "providerPlaceholder": {
+    "message": "请选择 AI 提供商"
+  },
+  "providerRequiredForModel": {
+    "message": "请先选择提供商"
+  },
+  "providerRequiredError": {
+    "message": "翻译前请先在设置中选择 AI 提供商。"
   }
 }

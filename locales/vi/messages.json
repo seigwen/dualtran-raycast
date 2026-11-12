@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Đang dùng lại nhà cung cấp ưu tiên"
+  },
+  "providerPlaceholder": {
+    "message": "Chọn nhà cung cấp"
+  },
+  "providerRequiredForModel": {
+    "message": "Hãy chọn nhà cung cấp trước"
+  },
+  "providerRequiredError": {
+    "message": "Hãy chọn nhà cung cấp AI trong cài đặt trước khi dịch."
   }
 }

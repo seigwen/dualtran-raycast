@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "환경설정 제공자를 다시 사용 중"
+  },
+  "providerPlaceholder": {
+    "message": "공급자 선택"
+  },
+  "providerRequiredForModel": {
+    "message": "먼저 공급자를 선택하세요"
+  },
+  "providerRequiredError": {
+    "message": "번역하기 전에 설정에서 AI 공급자를 선택하세요."
   }
 }

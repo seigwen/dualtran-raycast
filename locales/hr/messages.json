@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "Ponovno se koristi pružatelj postavki"
+  },
+  "providerPlaceholder": {
+    "message": "Odaberite pružatelja"
+  },
+  "providerRequiredForModel": {
+    "message": "Najprije odaberite pružatelja"
+  },
+  "providerRequiredError": {
+    "message": "Prije prevođenja odaberite AI pružatelja u postavkama."
   }
 }

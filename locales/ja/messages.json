@@ -34,5 +34,14 @@
   },
   "toastUsingPreference": {
     "message": "設定プロバイダーを再度使用中"
+  },
+  "providerPlaceholder": {
+    "message": "プロバイダーを選択"
+  },
+  "providerRequiredForModel": {
+    "message": "先にプロバイダーを選択してください"
+  },
+  "providerRequiredError": {
+    "message": "翻訳する前に設定で AI プロバイダーを選択してください。"
   }
 }
